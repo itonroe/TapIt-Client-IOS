@@ -1,0 +1,24 @@
+PODS:
+  - SAConfettiView (0.1.8)
+  - Socket.IO-Client-Swift (15.2.0):
+    - Starscream (~> 3.1)
+  - Starscream (3.1.1)
+
+DEPENDENCIES:
+  - SAConfettiView
+  - Socket.IO-Client-Swift (~> 15.2)
+
+SPEC REPOS:
+  trunk:
+    - SAConfettiView
+    - Socket.IO-Client-Swift
+    - Starscream
+
+SPEC CHECKSUMS:
+  SAConfettiView: c87031a2280659261b730fce3669fb10e73636ee
+  Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+
+PODFILE CHECKSUM: e405f8708da4ee11f2e4f2c87c13ad28663cbdb9
+
+COCOAPODS: 1.8.4

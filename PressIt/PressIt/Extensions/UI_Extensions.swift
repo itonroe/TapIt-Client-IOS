@@ -222,7 +222,6 @@ extension UIViewController {
 
         // add the actions (buttons)
         alert.addAction(UIAlertAction(title: "Try Again!", style: UIAlertAction.Style.destructive) { (alertAction) in })
-        
         alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.white
         alert.view.subviews.first?.subviews.first?.subviews.first?.tintColor = UIColor.systemRed
         alert.view.tintColor = UIColor.systemRed

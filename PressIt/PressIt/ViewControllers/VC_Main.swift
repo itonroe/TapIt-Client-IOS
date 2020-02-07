@@ -73,7 +73,7 @@ class VC_Main: UIViewController {
         ui = UI (size: self.view.frame.size);
         adjustUI()
         
-        overrideUserInterfaceStyle = .light
+        //overrideUserInterfaceStyle = .light
         
         set_playerData();
         
@@ -91,6 +91,7 @@ class VC_Main: UIViewController {
         //UserDefaults.standard.set("38", forKey: "PLAYER_LEVEL_STATUS")
         //UserDefaults.standard.set("1", forKey: "PLAYER_LEVEL")
         UserDefaults.standard.set("false", forKey: "SIGN_IN")
+        UserDefaults.standard.set("On", forKey: "Sound")
         
         if (UserDefaults.standard.value(forKey: "SIGN_IN") == nil){
             UserDefaults.standard.set("false", forKey: "SIGN_IN")

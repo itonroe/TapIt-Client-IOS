@@ -417,7 +417,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wWI-1p-VNF"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Qd-A4-dpm"/>
@@ -593,7 +593,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Dfx-un-Ra0"/>
                     </view>
                     <navigationItem key="navigationItem" id="TVi-dr-VaX"/>
@@ -1040,7 +1040,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rfc-m1-uzH"/>
                     </view>
                     <navigationItem key="navigationItem" id="6HE-Gg-inM"/>
@@ -1176,7 +1176,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7SH-Lo-IOa"/>
                     </view>
                     <navigationItem key="navigationItem" id="8jZ-nJ-eLH"/>
@@ -1303,7 +1303,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oSK-fe-KZc"/>
                     </view>
                     <navigationItem key="navigationItem" id="7cR-dN-Wu4"/>
@@ -1355,6 +1355,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="zlR-GX-Fna"/>
         <segue reference="SYg-jo-VN7"/>
-        <segue reference="Z2i-uu-NGP"/>
+        <segue reference="30s-Mh-chi"/>
     </inferredMetricsTieBreakers>
 </document>

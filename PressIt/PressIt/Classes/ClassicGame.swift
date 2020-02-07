@@ -9,6 +9,7 @@
 import Foundation
 import ObjectiveC
 import UIKit
+import SAConfettiView
 
 class ClassicGame {
 
@@ -146,9 +147,20 @@ class ClassicGame {
         let high_score = UserDefaults.standard.value(forKey: "HIGH_SCORE_" + String(self.gameseconds) + "_TAPS") as! Int;
         
         if (taps > high_score){
-            openAlertToGetInfo();
+            showConfetti();
+            //openAlertToGetInfo();
+            controller.lbl_record.text = String(taps);
             UserDefaults.standard.set(taps, forKey: "HIGH_SCORE_" + String(self.gameseconds) + "_TAPS");
         }
+    }
+    
+    func showConfetti(){
+        let confettiView = controller.startConfetti();
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+            self.controller.stopConfetti(conefettiView: confettiView)
+        })
+        
     }
     
     //Open an alert with a fullname field to update the name of the leader

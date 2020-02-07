@@ -16,6 +16,7 @@ class VC_MP_Menu: UIViewController{
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var btn_Host: UIButton!
     @IBOutlet weak var btn_Join: UIButton!
+    @IBOutlet weak var lbl_Useranme: UILabel!
     
     var SC = ServerConversation()
     var gameID: String!
@@ -61,6 +62,7 @@ class VC_MP_Menu: UIViewController{
         adjustUI()
         
         self.nickname = UserDefaults.standard.value(forKey: "PLAYER_NICKNAME") as? String;
+        lbl_Useranme.text = nickname;
         self.lvl = UserDefaults.standard.value(forKey: "PLAYER_LEVEL") as? String;
         self.lvl_status = UserDefaults.standard.value(forKey: "PLAYER_LEVEL_STATUS") as? String;
     }

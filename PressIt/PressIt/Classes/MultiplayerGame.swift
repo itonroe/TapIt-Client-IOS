@@ -138,11 +138,18 @@ class MultiplayerGame {
         }
     }
     
-    //Check if there is a new high score, if it is Update
+    //Update User Data
     public func setLevelStatus() {
         if(controller.level_status > UserDefaults.standard.float(forKey: "PLAYER_LEVEL_STATUS")){
             UserDefaults.standard.set(String(controller.level_status), forKey: "PLAYER_LEVEL_STATUS");
-            //showplayerlevelupanimation;
+            
+            if (UserDefaults.standard.value(forKey: "SIGN_IN") as! String == "true"){
+                let lvl = UserDefaults.standard.value(forKey: "PLAYER_LEVEL") as! String;
+                let username = UserDefaults.standard.value(forKey: "PLAYER_NICKNAME") as! String;
+                let level_status = UserDefaults.standard.value(forKey: "PLAYER_LEVEL_STATUS") as! String;
+                
+                controller.SC.updateUserLevel(username: username, level: lvl, level_status: level_status)
+            }
         }
     }
     

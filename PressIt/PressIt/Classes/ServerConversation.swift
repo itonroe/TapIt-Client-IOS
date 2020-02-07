@@ -11,8 +11,8 @@ import SocketIO
 
 class ServerConversation: NSObject {
 
-    //let manager = SocketManager(socketURL: URL(string: "ws://press-it.herokuapp.com/")!, config: [.log(true), .compress])
-    let manager = SocketManager(socketURL: URL(string: "http://10.0.0.57:8080/")!, config: [.log(true), .compress])
+    let manager = SocketManager(socketURL: URL(string: "ws://press-it.herokuapp.com/")!, config: [.log(true), .compress])
+    //let manager = SocketManager(socketURL: URL(string: "http://10.0.0.57:8080/")!, config: [.log(true), .compress])
     var socket: SocketIOClient!
     
     var viewController: VC_MP_GroupList!
@@ -98,5 +98,13 @@ class ServerConversation: NSObject {
     
     func endGame(gameID: String){
         socket.emit("endgame", gameID);
+    }
+    
+    func updateUserLevel(username: String, level: String, level_status: String){
+        socket.emit("update_level", [username, level, level_status])
+    }
+    
+    func closeSocket(){
+        self.socket.disconnect();
     }
 }

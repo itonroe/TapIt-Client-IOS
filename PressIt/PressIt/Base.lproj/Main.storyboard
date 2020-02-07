@@ -180,6 +180,18 @@
                                     <action selector="btn_MultiPlayer:" destination="73V-4v-SSZ" eventType="touchUpInside" id="9yt-gE-fxd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egy-XX-1xA">
+                                <rect key="frame" x="7" y="690" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="speaker.slash" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_Back:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1NL-YR-TCg"/>
+                                    <action selector="btn_Sound:" destination="73V-4v-SSZ" eventType="touchUpInside" id="LdK-V4-HPK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Xjq-QM-uPM"/>
@@ -190,6 +202,7 @@
                         <outlet property="btn_Arcade" destination="ciW-yN-5Ft" id="HmT-uT-HWP"/>
                         <outlet property="btn_Classic" destination="R0m-df-b8m" id="B6N-zA-r54"/>
                         <outlet property="btn_Multiplayer" destination="zKL-gL-l40" id="NIE-qJ-vC1"/>
+                        <outlet property="btn_Sound" destination="Egy-XX-1xA" id="nzz-m0-JC9"/>
                         <outlet property="img_Logo" destination="Hof-vS-7Mc" id="Cha-DB-HSv"/>
                         <outlet property="lbl_Copyright" destination="DpV-k7-c0s" id="lVo-rz-vZQ"/>
                         <segue destination="e3c-ld-7zu" kind="presentation" identifier="segue_arcade" modalPresentationStyle="fullScreen" id="GZp-Wd-ZjX"/>
@@ -369,7 +382,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPb-Eb-hjd">
-                                <rect key="frame" x="102" y="461" width="212" height="48"/>
+                                <rect key="frame" x="102" y="491" width="212" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back" image="btn_join.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -379,7 +392,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1f-x3-mIy">
-                                <rect key="frame" x="102" y="401" width="212" height="48"/>
+                                <rect key="frame" x="102" y="431" width="212" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btn_host.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -387,6 +400,21 @@
                                 <connections>
                                     <action selector="btn_Host:" destination="Asv-0w-oF7" eventType="touchUpInside" id="Ll9-Sc-2qV"/>
                                 </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3f-du-E8C">
+                                <rect key="frame" x="100" y="340" width="215" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgG-gy-wBu">
+                                <rect key="frame" x="355" y="20" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="22" maxX="10" maxY="0.0"/>
+                                <state key="normal" image="btn_more.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -398,6 +426,7 @@
                         <outlet property="btn_Host" destination="Y1f-x3-mIy" id="5he-2W-05j"/>
                         <outlet property="btn_Join" destination="qPb-Eb-hjd" id="dfK-VH-gOG"/>
                         <outlet property="img_Logo" destination="2Ka-Vt-DOR" id="hTM-71-fyH"/>
+                        <outlet property="lbl_Useranme" destination="x3f-du-E8C" id="vtM-Gt-mlR"/>
                         <segue destination="tHT-pF-in6" kind="presentation" identifier="segue_createroom" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="SYg-jo-VN7"/>
                     </connections>
                 </viewController>
@@ -417,6 +446,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXZ-nj-Pfl">
+                                <rect key="frame" x="355" y="20" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="22" maxX="10" maxY="0.0"/>
+                                <state key="normal" image="btn_more.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="MpD-Zd-YuS">
                                 <rect key="frame" x="125" y="92" width="165" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -948,6 +985,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncV-1m-shp">
+                                <rect key="frame" x="355" y="20" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="22" maxX="10" maxY="0.0"/>
+                                <state key="normal" image="btn_more.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="m88-ot-DKB">
                                 <rect key="frame" x="125" y="92" width="165" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1042,6 +1087,9 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btn_signup:" destination="Qe7-EK-bCq" eventType="touchUpInside" id="jir-oX-x7v"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kts-yV-F9m">
                                 <rect key="frame" x="113" y="693" width="140" height="17"/>
@@ -1054,7 +1102,6 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Igw-dW-nYA">
                                 <rect key="frame" x="82" y="319" width="250" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40784313725490196" green="0.84705882352941175" blue="0.51764705882352935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1070,10 +1117,9 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SYt-c9-RYI">
                                 <rect key="frame" x="82" y="378" width="250" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40784313729999999" green="0.84705882349999995" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="4"/>
@@ -1089,6 +1135,9 @@
                                 <state key="normal" image="btn_login.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btn_login:" destination="Qe7-EK-bCq" eventType="touchUpInside" id="Sa4-rX-HxL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvE-mf-RBb">
                                 <rect key="frame" x="152" y="503" width="111" height="29"/>
@@ -1113,7 +1162,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Asv-0w-oF7" kind="custom" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="Hfw-Zo-1Gs"/>
+                                    <segue destination="Asv-0w-oF7" kind="custom" identifier="segue_mp_menu" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="Hfw-Zo-1Gs"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lvl_bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="erV-yk-kpD">
@@ -1134,12 +1183,141 @@
                     <connections>
                         <outlet property="txt_Password" destination="SYt-c9-RYI" id="L4w-3z-eP8"/>
                         <outlet property="txt_Username" destination="Igw-dW-nYA" id="Lla-EM-b7g"/>
+                        <segue destination="AWC-BQ-G4K" kind="custom" identifier="segue_signup" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="HfC-aZ-tUr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COg-DM-iFo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="xmu-U2-M21" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-788.40579710144937" y="1593.7500000000002"/>
+        </scene>
+        <!--Signup-->
+        <scene sceneID="TG5-Cx-njh">
+            <objects>
+                <viewController id="AWC-BQ-G4K" customClass="VC_Signup" customModule="TapIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eNX-G6-Uzi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bkg.png" translatesAutoresizingMaskIntoConstraints="NO" id="KtQ-Iy-pak">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="eU2-u6-NIc">
+                                <rect key="frame" x="125" y="92" width="165" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZr-vW-DHZ">
+                                <rect key="frame" x="0.0" y="24" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="12" minY="20" maxX="8" maxY="0.0"/>
+                                <state key="normal" image="btn_back_ico.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_Back:" destination="AWC-BQ-G4K" eventType="touchUpInside" id="aag-0h-SP3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jw-QL-iiz">
+                                <rect key="frame" x="268" y="687" width="38" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_Login:" destination="AWC-BQ-G4K" eventType="touchUpInside" id="E7H-61-13Q"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh5-wR-RFh">
+                                <rect key="frame" x="109" y="693" width="154" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ta-RG-JS6">
+                                <rect key="frame" x="101" y="607" width="212" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btn_signup.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_Signup:" destination="AWC-BQ-G4K" eventType="touchUpInside" id="M1A-he-NuZ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cXm-6b-yEf">
+                                <rect key="frame" x="82" y="327" width="250" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="txt_Username:" destination="UFi-ZG-IPz" eventType="editingDidEnd" id="YiJ-BZ-RMf"/>
+                                    <action selector="txt_Username:" destination="xmu-U2-M21" eventType="editingDidEnd" id="iqJ-qR-t1z"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yaX-4h-MW3">
+                                <rect key="frame" x="82" y="386" width="250" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="txt_Username:" destination="UFi-ZG-IPz" eventType="editingDidEnd" id="Itj-A2-N1K"/>
+                                    <action selector="txt_Username:" destination="xmu-U2-M21" eventType="editingDidEnd" id="vIq-Xd-gLs"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DCe-fC-4b8">
+                                <rect key="frame" x="82" y="445" width="250" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="txt_Username:" destination="UFi-ZG-IPz" eventType="editingDidEnd" id="W8V-7g-MCH"/>
+                                    <action selector="txt_Username:" destination="xmu-U2-M21" eventType="editingDidEnd" id="orS-iB-dwS"/>
+                                </connections>
+                            </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error in registration" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMJ-ag-SNa">
+                                <rect key="frame" x="82" y="501" width="250" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="oSK-fe-KZc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7cR-dN-Wu4"/>
+                    <connections>
+                        <outlet property="lbl_Error" destination="VMJ-ag-SNa" id="Rxd-bC-3Dx"/>
+                        <outlet property="txt_Email" destination="yaX-4h-MW3" id="k6u-CJ-JNb"/>
+                        <outlet property="txt_Password" destination="DCe-fC-4b8" id="hvE-CU-cpJ"/>
+                        <outlet property="txt_Username" destination="cXm-6b-yEf" id="gha-42-1lc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gN9-K9-4kh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="UFi-ZG-IPz" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-788.40579710144937" y="2336.413043478261"/>
         </scene>
     </scenes>
     <resources>
@@ -1162,6 +1340,7 @@
         <image name="btn_multiplayer.png" width="484" height="110"/>
         <image name="btn_open.png" width="484" height="110"/>
         <image name="btn_pause_green.png" width="36" height="36"/>
+        <image name="btn_signup.png" width="484" height="110"/>
         <image name="btn_start.png" width="484" height="110"/>
         <image name="btn_startgame.png" width="486" height="106"/>
         <image name="btn_startover_new.png" width="486" height="106"/>
@@ -1170,11 +1349,12 @@
         <image name="logo_text.png" width="218.5" height="37"/>
         <image name="lvl_bar.png" width="192" height="5.2800002098083496"/>
         <image name="lvl_bar_full.png" width="192" height="5.2800002098083496"/>
+        <image name="speaker.slash" catalog="system" width="64" height="62"/>
         <image name="tap_new_circle.png" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zlR-GX-Fna"/>
-        <segue reference="FhR-1N-bQ6"/>
-        <segue reference="30s-Mh-chi"/>
+        <segue reference="SYg-jo-VN7"/>
+        <segue reference="Z2i-uu-NGP"/>
     </inferredMetricsTieBreakers>
 </document>

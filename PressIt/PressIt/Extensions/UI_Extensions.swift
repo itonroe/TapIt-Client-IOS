@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SAConfettiView
 
 extension UIImageView {
     func wiggle() {
@@ -156,8 +157,55 @@ extension UITextField {
         self.rightView = paddingView
         self.rightViewMode = .always
     }
+    func useUnderline() {
+        let border = CALayer()
+        let borderWidth = CGFloat(1.0)
+        border.borderColor = UIColor.white.cgColor;
+        border.frame = CGRect(x: 0, y: self.frame.size.height - borderWidth, width: self.frame.size.width, height: self.frame.size.height)
+        border.borderWidth = borderWidth
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
+    }
+    func setIcon(image: UIImage){
+        let iconView = UIImageView(frame:
+                       CGRect(x: 10, y: 5, width: 20, height: 20))
+        iconView.image = image
+        let iconContainerView: UIView = UIView(frame:
+                       CGRect(x: 20, y: 0, width: 40, height: 30))
+        iconContainerView.addSubview(iconView)
+        leftView = iconContainerView
+        leftViewMode = .always
+    }
+    func setBorder(width: Float, color: UIColor){
+        self.layer.sublayers?.popLast()
+        self.layer.backgroundColor = UIColor.white.withAlphaComponent(0.2).cgColor;
+        let border = CALayer()
+        let borderWidth = CGFloat(width)
+        border.borderColor = color.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - borderWidth, width: self.frame.size.width, height: self.frame.size.height)
+        border.borderWidth = borderWidth
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
+    }
+    func removeBorder(){
+        self.layer.borderWidth = 0;
+    }
 }
 extension UIViewController {
+
+    func startConfetti() -> SAConfettiView{
+        let confettiView = SAConfettiView(frame: self.view.bounds)
+        confettiView.intensity = 0.75
+        self.view.insertSubview(confettiView, at: self.view.subviews.count - 2);
+        confettiView.startConfetti()
+        
+        return confettiView;
+    }
+    
+    func stopConfetti(conefettiView: SAConfettiView){
+        conefettiView.stopConfetti();
+    }
+    
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -166,5 +214,30 @@ extension UIViewController {
 
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func openAlertError(title: String, message: String) {
+        // create the alert
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Try Again!", style: UIAlertAction.Style.destructive) { (alertAction) in })
+        
+        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.white
+        alert.view.subviews.first?.subviews.first?.subviews.first?.tintColor = UIColor.systemRed
+        alert.view.tintColor = UIColor.systemRed
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension UIColor {
+    static let errorRed = UIColor(red: 194, green: 54, blue: 61, alpha: 1.0)
+}
+
+extension String {
+    var isAlphanumeric: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
     }
 }

@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 import SAConfettiView
+import AVFoundation
+
+
+var backgroundMusicPlayer: AVAudioPlayer = AVAudioPlayer()
+//Define here the serverconnection
+
 
 class VC_Main: UIViewController {
     
@@ -17,11 +23,13 @@ class VC_Main: UIViewController {
     @IBOutlet weak var img_Logo: UIImageView!
     @IBOutlet weak var background: UIImageView!
     
+    @IBOutlet weak var btn_Sound: UIButton!
     @IBOutlet weak var btn_Arcade: UIButton!
     @IBOutlet weak var btn_Classic: UIButton!
     @IBOutlet weak var btn_Multiplayer: UIButton!
     
     @IBOutlet weak var lbl_Copyright: UILabel!
+    var isLogedIn = true;
     
     func adjustUI(){
         if (UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
@@ -59,10 +67,8 @@ class VC_Main: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let confettiView = SAConfettiView(frame: self.view.bounds)
-        //confettiView.intensity = 0.75
-        //self.view.addSubview(confettiView)
-        //confettiView.startConfetti()
+        
+        initMusicBackground();
         
         ui = UI (size: self.view.frame.size);
         adjustUI()
@@ -79,17 +85,30 @@ class VC_Main: UIViewController {
     }
     
     
+    
     func set_playerData(){
 
         //UserDefaults.standard.set("38", forKey: "PLAYER_LEVEL_STATUS")
         //UserDefaults.standard.set("1", forKey: "PLAYER_LEVEL")
+        UserDefaults.standard.set("false", forKey: "SIGN_IN")
+        
         if (UserDefaults.standard.value(forKey: "SIGN_IN") == nil){
-            UserDefaults.standard.set("true", forKey: "SIGN_IN")
+            UserDefaults.standard.set("false", forKey: "SIGN_IN")
+            UserDefaults.standard.set("On", forKey: "Sound")
         }
-        if (UserDefaults.standard.value(forKey: "SIGN_IN") == nil || UserDefaults.standard.value(forKey: "SIGN_IN") as! String == "true"){
+        
+        if (UserDefaults.standard.value(forKey: "Sound") as! String == "On"){
+            backgroundMusicPlayer.play();
+            btn_Sound.setImage(UIImage(systemName: "speaker.3"), for: .normal);
+        }
+        
+        if (UserDefaults.standard.value(forKey: "SIGN_IN") == nil || UserDefaults.standard.value(forKey: "SIGN_IN") as! String == "false"){
+            
+            isLogedIn = false;
+            
             UserDefaults.standard.set("Guest", forKey: "PLAYER_NICKNAME")
             UserDefaults.standard.set("1", forKey: "PLAYER_LEVEL")
-            UserDefaults.standard.set("0.0", forKey: "PLAYER_LEVEL_STATUS")
+            UserDefaults.standard.set("39.0", forKey: "PLAYER_LEVEL_STATUS")
         }
     }
     
@@ -108,7 +127,7 @@ class VC_Main: UIViewController {
     }
     
     @IBAction func btn_MultiPlayer(_ sender: Any) {
-        if (UserDefaults.standard.value(forKey: "PLAYER_NICKNAME") as! String == "Guest"){
+        if (!isLogedIn){
             performSegue(withIdentifier: "segue_login", sender: self)
         }
         else{
@@ -137,6 +156,31 @@ class VC_Main: UIViewController {
                 
             //}
         //}
+    }
+    @IBAction func btn_Sound(_ sender: Any) {
+        if (backgroundMusicPlayer.isPlaying){
+            btn_Sound.setImage(UIImage(systemName: "speaker.slash"), for: .normal);
+            backgroundMusicPlayer.stop();
+            UserDefaults.standard.set("Off", forKey: "Sound")
+        }
+        else {
+            btn_Sound.setImage(UIImage(systemName: "speaker.3"), for: .normal);
+            backgroundMusicPlayer.play();
+            UserDefaults.standard.set("On", forKey: "Sound")
+        }
+    }
+    
+    func initMusicBackground(){
+        if let musicURL = Bundle.main.url(forResource: "bkg_music", withExtension: "mp3") {
+        
+            do {
+                try backgroundMusicPlayer = AVAudioPlayer(contentsOf: musicURL)
+                backgroundMusicPlayer.numberOfLoops = -1
+                backgroundMusicPlayer.prepareToPlay()
+            } catch {
+                print(error);
+            }
+        }
     }
 }
 

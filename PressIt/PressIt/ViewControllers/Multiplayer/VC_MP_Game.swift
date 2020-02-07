@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SocketIO
+import SAConfettiView
 
 class VC_MP_Game: UIViewController {
     
@@ -70,16 +71,35 @@ class VC_MP_Game: UIViewController {
     }
     
     func levelUP(){
+        
         if (level == "12"){
             return;
         }
+        
+        showConfetti();
+        
         level_status = 0;
         level = String((level as NSString).integerValue + 1);
         
         UserDefaults.standard.set(level, forKey: "PLAYER_LEVEL");
         UserDefaults.standard.set("0.0", forKey: "PLAYER_LEVEL_STATUS")
         
-        //Need to update Server
+        if (UserDefaults.standard.value(forKey: "SIGN_IN") as! String == "true"){
+            let lvl = UserDefaults.standard.value(forKey: "PLAYER_LEVEL") as! String;
+            let username = UserDefaults.standard.value(forKey: "PLAYER_NICKNAME") as! String;
+            let level_status = UserDefaults.standard.value(forKey: "PLAYER_LEVEL_STATUS") as! String;
+            
+            self.SC.updateUserLevel(username: username, level: lvl, level_status: level_status)
+        }
+    }
+    
+    func showConfetti(){
+        let confettiView = startConfetti();
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+            self.stopConfetti(conefettiView: confettiView)
+        })
+        
     }
     
     func add_LevelProgress() {
@@ -87,6 +107,7 @@ class VC_MP_Game: UIViewController {
         
         update_LevelProgress()
     }
+    
     
     func getCountToNextLevel() -> Int{
         switch ((level as NSString).integerValue + 1){

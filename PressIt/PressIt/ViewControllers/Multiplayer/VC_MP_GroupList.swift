@@ -22,10 +22,7 @@ class VC_MP_GroupList: UIViewController {
     @IBOutlet weak var lbl_GameID: UILabel!
     
     var gamecode: String!
-    var nickname: String!
     var playerID: String!
-    var lvl_status: String!
-    var level: String!
     
     @IBOutlet weak var lbl_player1: UILabel!
     @IBOutlet weak var lbl_player2: UILabel!
@@ -49,11 +46,8 @@ class VC_MP_GroupList: UIViewController {
                 lbl_GameID.text = gamecode;
         }
         
-        if (room == nil){
-            room = Room(nickname: nickname, lvl: level, roomID: gamecode, playerID: playerID);}
-        
-        lbl_player1.text = nickname;
-        lbl_player_lvl_1.text = level;
+        lbl_player1.text = MP_PLAYER_NICKNAME;
+        lbl_player_lvl_1.text = MP_PLAYER_LEVEL;
     }
     
     func add_handlers(){
@@ -155,13 +149,7 @@ class VC_MP_GroupList: UIViewController {
             alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.destructive) { (alertAction) in
                 self.SC.endGame(gameID: self.gamecode);
 
-                let transition: CATransition = CATransition()
-                transition.duration = 0.3
-                transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-                transition.type = CATransitionType.moveIn
-                transition.subtype = CATransitionSubtype.fromLeft
-                self.view.window!.layer.add(transition, forKey: nil)
-                self.dismiss(animated: false, completion: nil)
+                self.dismissViewController()
             })
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { (alertAction) in })
             
@@ -179,13 +167,7 @@ class VC_MP_GroupList: UIViewController {
             alert.addAction(UIAlertAction(title: "Leave", style: UIAlertAction.Style.destructive) { (alertAction) in
                 self.SC.userExit(playerID: self.playerID, gameID: self.gamecode)
 
-                let transition: CATransition = CATransition()
-                transition.duration = 0.3
-                transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-                transition.type = CATransitionType.moveIn
-                transition.subtype = CATransitionSubtype.fromLeft
-                self.view.window!.layer.add(transition, forKey: nil)
-                self.dismiss(animated: false, completion: nil)
+                self.dismissViewController()
             })
             
             alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.white
@@ -203,7 +185,6 @@ class VC_MP_GroupList: UIViewController {
                 game.SC = SC;
                 game.gamecode = lbl_GameID.text!;
                 game.level_status = UserDefaults.standard.float(forKey: "PLAYER_LEVEL_STATUS")
-                game.level = UserDefaults.standard.value(forKey: "PLAYER_LEVEL") as? String;
             }
         }
     }

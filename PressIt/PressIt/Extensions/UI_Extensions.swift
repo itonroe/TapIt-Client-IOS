@@ -229,6 +229,24 @@ extension UIViewController {
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func updateUserDefaults(key: String, value: String){
+        if (key == "SIGN_IN"){
+            UserDefaults.standard.set(Bool(value), forKey: key)
+        } else{
+            UserDefaults.standard.set(value, forKey: key)
+        }
+    }
+    
+    func dismissViewController(){
+        let transition: CATransition = CATransition()
+        transition.duration = 0.3
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.moveIn
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: nil)
+        self.dismiss(animated: false, completion: nil)
+    }
 }
 
 extension UIColor {

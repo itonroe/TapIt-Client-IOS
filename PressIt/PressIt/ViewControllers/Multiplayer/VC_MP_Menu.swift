@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+//Define here the serverconnection
+
 class VC_MP_Menu: UIViewController{
     
     var ui: UI!
@@ -20,10 +22,7 @@ class VC_MP_Menu: UIViewController{
     
     var SC = ServerConversation()
     var gameID: String!
-    var nickname: String!
     var playerID: String!
-    var lvl: String!
-    var lvl_status: String!
     
     func adjustUI(){
         if (UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
@@ -61,14 +60,12 @@ class VC_MP_Menu: UIViewController{
         ui = UI (size: self.view.frame.size);
         adjustUI()
         
-        self.nickname = UserDefaults.standard.value(forKey: "PLAYER_NICKNAME") as? String;
-        lbl_Useranme.text = nickname;
-        self.lvl = UserDefaults.standard.value(forKey: "PLAYER_LEVEL") as? String;
-        self.lvl_status = UserDefaults.standard.value(forKey: "PLAYER_LEVEL_STATUS") as? String;
+        
+        lbl_Useranme.text = MP_PLAYER_NICKNAME;
     }
     
     @IBAction func btn_Host(_ sender: Any) {
-        SC.createNewGame(nickname: nickname, lvl: lvl)
+        SC.createNewGame(nickname: MP_PLAYER_NICKNAME, lvl: MP_PLAYER_LEVEL)
         
         SC.socket.on("newgame") {data, ack in
             self.gameID = data[0] as? String
@@ -87,12 +84,12 @@ class VC_MP_Menu: UIViewController{
             if let groupList = segue.destination as? VC_MP_GroupList {
                 groupList.isHost = true;
                 groupList.gamecode = self.gameID;
-                groupList.nickname = self.nickname;
-                groupList.level = self.lvl;
-                groupList.lvl_status = self.lvl_status;
+                //groupList.nickname = MP_PLAYER_NICKNAME;
+                //groupList.level = MP_PLAYER_LEVEL;
+                //groupList.lvl_status = self.lvl_status;
                 
                 
-                groupList.room = Room(nickname: nickname, lvl: lvl, roomID: gameID, playerID: playerID)
+                groupList.room = Room(nickname: MP_PLAYER_NICKNAME, lvl: MP_PLAYER_LEVEL, roomID: gameID, playerID: playerID)
                 SC.viewController = groupList;
                 //SC.getallplayers(gameID: gameID)
                 

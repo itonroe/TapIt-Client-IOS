@@ -15,43 +15,25 @@ class VC_MP_JoinGroup: UIViewController {
     @IBOutlet weak var txt_gamecode: UITextField!
     
     let SC = ServerConversation();
-    var nickname: String!
-    var lvl: String!
     var playerID: String!
     
     override func viewDidLoad() {
         self.hideKeyboardWhenTappedAround()
-        if (UserDefaults.standard.value(forKey: "PLAYER_NICKNAME") != nil){
-            self.nickname = UserDefaults.standard.value(forKey: "PLAYER_NICKNAME") as? String;
-            self.lvl = UserDefaults.standard.value(forKey: "PLAYER_LEVEL") as? String;
-        }else{
-            dismiss(animated: true, completion: nil)
-        }
     }
     
     @IBAction func btn_Back(_ sender: Any) {
-        let transition: CATransition = CATransition()
-        transition.duration = 0.3
-        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        transition.type = CATransitionType.moveIn
-        transition.subtype = CATransitionSubtype.fromLeft
-        self.view.window!.layer.add(transition, forKey: nil)
-        self.dismiss(animated: false, completion: nil)
+        dismissViewController();
     }
     
     @IBAction func btn_Join(_ sender: Any) {
         
-        SC.addNewPlayer(nickname: nickname, lvl: lvl, gameID: txt_gamecode.text!)
+        SC.addNewPlayer(nickname: MP_PLAYER_NICKNAME, lvl: MP_PLAYER_LEVEL, gameID: txt_gamecode.text!)
         
         SC.socket.on("newplayer") {data, ack in
             let nickname = data[0] as? String
             self.playerID = data[1] as? String
             print("New player joined to game with nickname: '" + (nickname ?? "ERROR LOADING THE PLAYER NICKNAME") + "'");
             self.performSegue(withIdentifier: "segue_openroom", sender: self)
-            
-            //Move to game group screen
-            //send to a function that update the names of the players in the game to ui table.
-            //data has the name of the player
         }
     }
     
@@ -61,10 +43,9 @@ class VC_MP_JoinGroup: UIViewController {
                 
                 groupList.isHost = false;
                 groupList.gamecode = txt_gamecode.text;
-                groupList.nickname = self.nickname;
                 groupList.playerID = self.playerID;
                 
-                groupList.room = Room(nickname: nickname, lvl: lvl, roomID: txt_gamecode.text!, playerID: playerID)
+                groupList.room = Room(nickname: MP_PLAYER_NICKNAME, lvl: MP_PLAYER_LEVEL, roomID: txt_gamecode.text!, playerID: playerID)
                 SC.viewController = groupList;
                 SC.getallplayers(gameID: txt_gamecode.text!)
                 

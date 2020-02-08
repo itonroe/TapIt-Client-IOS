@@ -141,14 +141,13 @@ class MultiplayerGame {
     //Update User Data
     public func setLevelStatus() {
         if(controller.level_status > UserDefaults.standard.float(forKey: "PLAYER_LEVEL_STATUS")){
-            UserDefaults.standard.set(String(controller.level_status), forKey: "PLAYER_LEVEL_STATUS");
             
-            if (UserDefaults.standard.value(forKey: "SIGN_IN") as! String == "true"){
-                let lvl = UserDefaults.standard.value(forKey: "PLAYER_LEVEL") as! String;
-                let username = UserDefaults.standard.value(forKey: "PLAYER_NICKNAME") as! String;
-                let level_status = UserDefaults.standard.value(forKey: "PLAYER_LEVEL_STATUS") as! String;
+            MP_PLAYER_LEVEL_STATUS = String(controller.level_status)
+            
+            if (SIGNEDIN){
+                controller.updateUserDefaults(key: "PLAYER_LEVEL_STATUS", value: String(controller.level_status));
                 
-                controller.SC.updateUserLevel(username: username, level: lvl, level_status: level_status)
+                controller.SC.updateUserLevel(username: MP_PLAYER_NICKNAME, level: MP_PLAYER_LEVEL, level_status: MP_PLAYER_LEVEL_STATUS)
             }
         }
     }

@@ -32,8 +32,6 @@ class VC_MP_Game: UIViewController {
     @IBOutlet weak var lbl_timer: UILabel!
     @IBOutlet weak var lbl_levelStatus: UILabel!
     
-    var level: String!
-    
     var game: MultiplayerGame!
     var gameseconds: Int!
     
@@ -72,24 +70,21 @@ class VC_MP_Game: UIViewController {
     
     func levelUP(){
         
-        if (level == "12"){
+        if (MP_PLAYER_LEVEL == "12"){
             return;
         }
         
         showConfetti();
         
         level_status = 0;
-        level = String((level as NSString).integerValue + 1);
+        MP_PLAYER_LEVEL_STATUS = "0.0";
+        MP_PLAYER_LEVEL = String((MP_PLAYER_LEVEL as NSString).integerValue + 1);
         
-        UserDefaults.standard.set(level, forKey: "PLAYER_LEVEL");
-        UserDefaults.standard.set("0.0", forKey: "PLAYER_LEVEL_STATUS")
-        
-        if (UserDefaults.standard.value(forKey: "SIGN_IN") as! String == "true"){
-            let lvl = UserDefaults.standard.value(forKey: "PLAYER_LEVEL") as! String;
-            let username = UserDefaults.standard.value(forKey: "PLAYER_NICKNAME") as! String;
-            let level_status = UserDefaults.standard.value(forKey: "PLAYER_LEVEL_STATUS") as! String;
+        if (SIGNEDIN){
+            UserDefaults.standard.set(MP_PLAYER_LEVEL, forKey: "PLAYER_LEVEL");
+            UserDefaults.standard.set("0.0", forKey: "PLAYER_LEVEL_STATUS");
             
-            self.SC.updateUserLevel(username: username, level: lvl, level_status: level_status)
+            self.SC.updateUserLevel(username: MP_PLAYER_NICKNAME, level: MP_PLAYER_LEVEL, level_status: MP_PLAYER_LEVEL_STATUS)
         }
     }
     
@@ -110,7 +105,7 @@ class VC_MP_Game: UIViewController {
     
     
     func getCountToNextLevel() -> Int{
-        switch ((level as NSString).integerValue + 1){
+        switch ((MP_PLAYER_LEVEL as NSString).integerValue + 1){
         case 2: return 40;
         case 3: return 120;
         case 4: return 210;

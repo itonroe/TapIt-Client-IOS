@@ -33,6 +33,7 @@
 		D818252923EDD4C30015010C /* bkg_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D818252823EDD4C30015010C /* bkg_music.mp3 */; };
 		D818252C23EDD9140015010C /* sound_off.png in Resources */ = {isa = PBXBuildFile; fileRef = D818252A23EDD9140015010C /* sound_off.png */; };
 		D818252D23EDD9140015010C /* sound_on.png in Resources */ = {isa = PBXBuildFile; fileRef = D818252B23EDD9140015010C /* sound_on.png */; };
+		D818252F23EE1C3E0015010C /* VC_MP_Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D818252E23EE1C3E0015010C /* VC_MP_Profile.swift */; };
 		D823FF4B23AD8A2900CEEFE4 /* VC_MP_JoinGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D823FF4A23AD8A2900CEEFE4 /* VC_MP_JoinGroup.swift */; };
 		D823FF4D23AE0F6E00CEEFE4 /* VC_MP_Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D823FF4C23AE0F6E00CEEFE4 /* VC_MP_Game.swift */; };
 		D82E473B23D4FBC900731F52 /* bkg_game.png in Resources */ = {isa = PBXBuildFile; fileRef = D82E473A23D4FBC900731F52 /* bkg_game.png */; };
@@ -164,6 +165,7 @@
 		D818252823EDD4C30015010C /* bkg_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bkg_music.mp3; sourceTree = "<group>"; };
 		D818252A23EDD9140015010C /* sound_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sound_off.png; sourceTree = "<group>"; };
 		D818252B23EDD9140015010C /* sound_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sound_on.png; sourceTree = "<group>"; };
+		D818252E23EE1C3E0015010C /* VC_MP_Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_MP_Profile.swift; sourceTree = "<group>"; };
 		D823FF4A23AD8A2900CEEFE4 /* VC_MP_JoinGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_MP_JoinGroup.swift; sourceTree = "<group>"; };
 		D823FF4C23AE0F6E00CEEFE4 /* VC_MP_Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_MP_Game.swift; sourceTree = "<group>"; };
 		D82E473A23D4FBC900731F52 /* bkg_game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkg_game.png; sourceTree = "<group>"; };
@@ -520,6 +522,7 @@
 				D823FF4A23AD8A2900CEEFE4 /* VC_MP_JoinGroup.swift */,
 				D823FF4C23AE0F6E00CEEFE4 /* VC_MP_Game.swift */,
 				D88DA10C23B0C60700D6D9CF /* VC_MP_Menu.swift */,
+				D818252E23EE1C3E0015010C /* VC_MP_Profile.swift */,
 			);
 			path = Multiplayer;
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 				D80E99F323CD2DCC00AE2706 /* Player.swift in Sources */,
 				D8CDBEBB23D5C8DD000BDF64 /* SegueFromRight.swift in Sources */,
 				D823FF4D23AE0F6E00CEEFE4 /* VC_MP_Game.swift in Sources */,
+				D818252F23EE1C3E0015010C /* VC_MP_Profile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

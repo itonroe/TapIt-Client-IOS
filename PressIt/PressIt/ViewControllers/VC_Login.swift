@@ -52,16 +52,24 @@ class VC_Login: UIViewController {
                 }
                 else {
                     print("Login Successfully");
+
+                    MP_PLAYER_NICKNAME = self.txt_Username.text!
+                    MP_PLAYER_LEVEL = data[0] as! String
+                    MP_PLAYER_LEVEL_STATUS = data[1] as! String
                     
-                    UserDefaults.standard.set("true", forKey: "SIGN_IN")
-                    UserDefaults.standard.set(self.txt_Username.text, forKey: "PLAYER_NICKNAME")
-                    UserDefaults.standard.set(data[0] as! String, forKey: "PLAYER_LEVEL")
-                    UserDefaults.standard.set(data[1] as! String, forKey: "PLAYER_LEVEL_STATUS")
+                    self.updateProfileDefaults();
                     
                     self.performSegue(withIdentifier: "segue_mp_menu", sender: self)
                 }
             }
         }
+    }
+    
+    func updateProfileDefaults(){
+        updateUserDefaults(key: "SIGN_IN", value: "true")
+        updateUserDefaults(key: "PLAYER_NICKNAME", value: MP_PLAYER_NICKNAME)
+        updateUserDefaults(key: "PLAYER_LEVEL", value: MP_PLAYER_LEVEL)
+        updateUserDefaults(key: "PLAYER_LEVEL_STATUS", value: MP_PLAYER_LEVEL_STATUS)
     }
     
     func checkValidation() -> Bool{

@@ -13,7 +13,11 @@ import AVFoundation
 
 
 var backgroundMusicPlayer: AVAudioPlayer = AVAudioPlayer()
-//Define here the serverconnection
+
+var SIGNEDIN = UserDefaults.standard.bool(forKey: "SIGN_IN");
+var MP_PLAYER_NICKNAME = UserDefaults.standard.value(forKey: "PLAYER_NICKNAME") as! String;
+var MP_PLAYER_LEVEL = UserDefaults.standard.value(forKey: "PLAYER_LEVEL") as! String;
+var MP_PLAYER_LEVEL_STATUS = UserDefaults.standard.value(forKey: "PLAYER_LEVEL_STATUS") as! String;
 
 
 class VC_Main: UIViewController {
@@ -29,7 +33,6 @@ class VC_Main: UIViewController {
     @IBOutlet weak var btn_Multiplayer: UIButton!
     
     @IBOutlet weak var lbl_Copyright: UILabel!
-    var isLogedIn = true;
     
     func adjustUI(){
         if (UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
@@ -67,15 +70,25 @@ class VC_Main: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         initMusicBackground();
         
         ui = UI (size: self.view.frame.size);
         adjustUI()
         
-        //overrideUserInterfaceStyle = .light
+        //UserDefaults.standard.removeObject(forKey: "SIGN_IN")
         
-        set_playerData();
+        if (UserDefaults.standard.value(forKey: "SIGN_IN") == nil){
+            initUserDefaultData()
+        }
+        
+        SIGNEDIN = UserDefaults.standard.bool(forKey: "SIGN_IN");
+        MP_PLAYER_NICKNAME = UserDefaults.standard.value(forKey: "PLAYER_NICKNAME") as! String;
+        MP_PLAYER_LEVEL = UserDefaults.standard.value(forKey: "PLAYER_LEVEL") as! String;
+        print(UserDefaults.standard.value(forKey: "PLAYER_LEVEL_STATUS") as! String);
+        MP_PLAYER_LEVEL_STATUS = UserDefaults.standard.value(forKey: "PLAYER_LEVEL_STATUS") as! String;
+        
+        setBackgroundSound();
         
         reset_Data(classicGame: "0");
         reset_Data(classicGame: "3");
@@ -84,32 +97,20 @@ class VC_Main: UIViewController {
         reset_Data(classicGame: "15");
     }
     
-    
-    
-    func set_playerData(){
-
-        //UserDefaults.standard.set("38", forKey: "PLAYER_LEVEL_STATUS")
-        //UserDefaults.standard.set("1", forKey: "PLAYER_LEVEL")
-        UserDefaults.standard.set("false", forKey: "SIGN_IN")
+    func initUserDefaultData(){
+        
         UserDefaults.standard.set("On", forKey: "Sound")
+        UserDefaults.standard.set(false, forKey: "SIGN_IN")
+        UserDefaults.standard.set("Guest", forKey: "PLAYER_NICKNAME")
+        UserDefaults.standard.set("1", forKey: "PLAYER_LEVEL")
+        UserDefaults.standard.set("39.0", forKey: "PLAYER_LEVEL_STATUS")
         
-        if (UserDefaults.standard.value(forKey: "SIGN_IN") == nil){
-            UserDefaults.standard.set("false", forKey: "SIGN_IN")
-            UserDefaults.standard.set("On", forKey: "Sound")
-        }
-        
+    }
+    
+    func setBackgroundSound(){
         if (UserDefaults.standard.value(forKey: "Sound") as! String == "On"){
             backgroundMusicPlayer.play();
             btn_Sound.setImage(UIImage(systemName: "speaker.3"), for: .normal);
-        }
-        
-        if (UserDefaults.standard.value(forKey: "SIGN_IN") == nil || UserDefaults.standard.value(forKey: "SIGN_IN") as! String == "false"){
-            
-            isLogedIn = false;
-            
-            UserDefaults.standard.set("Guest", forKey: "PLAYER_NICKNAME")
-            UserDefaults.standard.set("1", forKey: "PLAYER_LEVEL")
-            UserDefaults.standard.set("39.0", forKey: "PLAYER_LEVEL_STATUS")
         }
     }
     
@@ -128,7 +129,7 @@ class VC_Main: UIViewController {
     }
     
     @IBAction func btn_MultiPlayer(_ sender: Any) {
-        if (!isLogedIn){
+        if (!SIGNEDIN){
             performSegue(withIdentifier: "segue_login", sender: self)
         }
         else{

@@ -49,6 +49,8 @@ class VC_Main: UIViewController {
             background.frame.size.height += 2;
             background.frame.origin = CGPoint(x: -1, y: 0);
             btn_Multiplayer.frame.origin.y -= 6;
+            btn_Multiplayer.frame.origin.x -= 4;
+            btn_Classic.frame.origin.x -= 4;
         }
         else{
             background.frame.origin = CGPoint(x: 0, y: 0);
@@ -59,12 +61,14 @@ class VC_Main: UIViewController {
         img_Logo.frame.origin = ui.getNewLocation(old_location: img_Logo.frame.origin)
         btn_Classic.frame.origin = ui.getNewLocation(old_location: btn_Classic.frame.origin)
         btn_Multiplayer.frame.origin = ui.getNewLocation(old_location: btn_Multiplayer.frame.origin)
+        btn_Sound.frame.origin = ui.getNewLocation(old_location: btn_Sound.frame.origin)
         lbl_Copyright.frame.origin = ui.getNewLocation(old_location: lbl_Copyright.frame.origin)
         
         img_Logo.frame.size = ui.getNewSize(old_size: img_Logo.frame.size)
         background.frame.size = ui.getNewSize(old_size: background.frame.size)
         btn_Classic.frame.size = ui.getNewSize(old_size: btn_Classic.frame.size)
         btn_Multiplayer.frame.size = ui.getNewSize(old_size: btn_Multiplayer.frame.size)
+        btn_Sound.frame.size = ui.getNewSize(old_size: btn_Sound.frame.size)
         lbl_Copyright.frame.size = ui.getNewSize(old_size: lbl_Copyright.frame.size)
     }
     
@@ -88,7 +92,13 @@ class VC_Main: UIViewController {
         print(UserDefaults.standard.value(forKey: "PLAYER_LEVEL_STATUS") as! String);
         MP_PLAYER_LEVEL_STATUS = UserDefaults.standard.value(forKey: "PLAYER_LEVEL_STATUS") as! String;
         
+        
         setBackgroundSound();
+        
+        
+        if (UserDefaults.standard.value(forKey: "MP_GAME_ID") != nil){
+            performSegue(withIdentifier: "segue_multiplayer", sender: self)
+        }
         
         reset_Data(classicGame: "0");
         reset_Data(classicGame: "3");
@@ -103,7 +113,8 @@ class VC_Main: UIViewController {
         UserDefaults.standard.set(false, forKey: "SIGN_IN")
         UserDefaults.standard.set("Guest", forKey: "PLAYER_NICKNAME")
         UserDefaults.standard.set("1", forKey: "PLAYER_LEVEL")
-        UserDefaults.standard.set("39.0", forKey: "PLAYER_LEVEL_STATUS")
+        UserDefaults.standard.set("0.0", forKey: "PLAYER_LEVEL_STATUS")
+        UserDefaults.standard.set("On", forKey: "Sound")
         
     }
     

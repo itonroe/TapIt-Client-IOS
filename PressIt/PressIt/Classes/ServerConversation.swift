@@ -16,6 +16,7 @@ class ServerConversation: NSObject {
     var socket: SocketIOClient!
     
     var viewController: VC_MP_GroupList!
+    var game: VC_MP_Game!
     
     override init() {
         super.init()
@@ -27,6 +28,10 @@ class ServerConversation: NSObject {
     
     func addViewController(view: VC_MP_GroupList){
         self.viewController = view;
+    }
+    
+    func addViewGame(view: VC_MP_Game){
+        self.game = view;
     }
     
     func addHandlers(){
@@ -55,8 +60,8 @@ class ServerConversation: NSObject {
                 let player_details = p.components(separatedBy: "%20");
                 
                 if (self.viewController != nil && player_details.count >= 3){
-                    if (self.viewController.room.getIndexByPlayer(player_ID: player_details[2]) == -1){
-                        self.viewController.room.add_Player(nickname: player_details[0], lvl: player_details[1], playerID: player_details[2]);
+                    if (room.getIndexByPlayer(player_ID: player_details[2]) == -1){
+                        room.add_Player(nickname: player_details[0], lvl: player_details[1], playerID: player_details[2]);
                     }
                     
                     self.viewController.updatePlayersList();
@@ -65,10 +70,34 @@ class ServerConversation: NSObject {
             }
         }
         
+        self.socket.on("get_score") {data, ack in
+                   let list = data[0] as? String;
+                   let players_list = list?.components(separatedBy: "%50");
+                   
+                   for p in players_list!{
+                       let player_details = p.components(separatedBy: "%20");
+                       
+                       if (self.viewController != nil && player_details.count >= 2){
+                           let player_Index = room.getIndexByPlayer(player_ID: player_details[0])
+                        
+                           if (player_Index != -1){
+                            room.players[player_Index].set_Taps(taps: player_details[1]);
+                           }
+                       }
+                       
+                   }
+            
+                   self.game.performSegue(withIdentifier: "segue_score", sender: self.game)
+               }
+        
         self.socket.on("playerexit") {data, ack in
-            let playerID = data[0] as! String;
-            self.viewController.room.remove_Player(playerID: playerID);
-            self.viewController.updatePlayersList();
+            if (self.viewController != nil){
+                let playerID = data[0] as! String;
+                if (playerID != ""){
+                    room.remove_Player(playerID: playerID);
+                    self.viewController.updatePlayersList();
+                }
+            }
         }
     }
     
@@ -102,6 +131,10 @@ class ServerConversation: NSObject {
     
     func updateUserLevel(username: String, level: String, level_status: String){
         socket.emit("update_level", [username, level, level_status])
+    }
+
+    func updateTaps(gameID: String, playerID: String, taps: String){
+        socket.emit("update_taps", [gameID, playerID, taps])
     }
     
     func closeSocket(){

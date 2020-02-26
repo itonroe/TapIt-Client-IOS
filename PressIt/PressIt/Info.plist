@@ -20,6 +20,22 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Roboto-Bold.ttf</string>
+		<string>Roboto-Regular.ttf</string>
+		<string>Roboto-Light.ttf</string>
+		<string>Roboto-Thin.ttf</string>
+		<string>Seravek-Light.ttf</string>
+		<string>Seravek-Medium.ttf</string>
+		<string>Seravek.ttf</string>
+		<string>Seravek-Thin.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -48,30 +64,12 @@
 		<string>armv7</string>
 	</array>
 	<key>UIStatusBarHidden</key>
-	<false/>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Roboto-Bold.ttf</string>
-		<string>Roboto-Regular.ttf</string>
-		<string>Roboto-Light.ttf</string>
-		<string>Roboto-Thin.ttf</string>
-		<string>Seravek-Light.ttf</string>
-		<string>Seravek-Medium.ttf</string>
-		<string>Seravek.ttf</string>
-		<string>Seravek-Thin.ttf</string>
-	</array>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -79,5 +77,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

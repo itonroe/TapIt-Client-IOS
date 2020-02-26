@@ -79,7 +79,7 @@ class MultiplayerGame {
         self.controller.btn_Leader.isHidden = false;
         self.controller.btn_Back.isHidden = false;
         self.controller.btn_Start.isHidden = false;
-        self.setLevelStatus();
+        self.update_Server();
     }
     
     //Reset the Game
@@ -139,13 +139,17 @@ class MultiplayerGame {
     }
     
     //Update User Data
-    public func setLevelStatus() {
+    public func update_Server() {
+        if (getTaps() != "0"){
+            controller.SC.socket.emit("update_score", [controller.gamecode, controller.playerID, getTaps()])
+        }
+        
         if(controller.level_status > UserDefaults.standard.float(forKey: "PLAYER_LEVEL_STATUS")){
             
             MP_PLAYER_LEVEL_STATUS = String(controller.level_status)
             
             if (SIGNEDIN){
-                controller.updateUserDefaults(key: "PLAYER_LEVEL_STATUS", value: String(controller.level_status));
+                controller.updateUserDefaults(key: "PLAYER_LEVEL_STATUS", value: MP_PLAYER_LEVEL_STATUS);
                 
                 controller.SC.updateUserLevel(username: MP_PLAYER_NICKNAME, level: MP_PLAYER_LEVEL, level_status: MP_PLAYER_LEVEL_STATUS)
             }

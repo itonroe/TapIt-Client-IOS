@@ -166,9 +166,6 @@
                                 <state key="normal" image="btn_arcade.png">
                                     <color key="titleColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="btn_arcade:" destination="73V-4v-SSZ" eventType="touchUpInside" id="6aL-k6-UqU"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKL-gL-l40">
                                 <rect key="frame" x="102" y="461" width="212" height="48"/>
@@ -199,7 +196,6 @@
                     <navigationItem key="navigationItem" id="k3V-04-7Uu"/>
                     <connections>
                         <outlet property="background" destination="mvw-Ig-u8V" id="Pc0-5u-cvb"/>
-                        <outlet property="btn_Arcade" destination="ciW-yN-5Ft" id="HmT-uT-HWP"/>
                         <outlet property="btn_Classic" destination="R0m-df-b8m" id="B6N-zA-r54"/>
                         <outlet property="btn_Multiplayer" destination="zKL-gL-l40" id="NIE-qJ-vC1"/>
                         <outlet property="btn_Sound" destination="Egy-XX-1xA" id="nzz-m0-JC9"/>
@@ -388,7 +384,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dyd-ho-fg5" kind="presentation" modalPresentationStyle="fullScreen" id="H8e-bT-wod"/>
+                                    <segue destination="dyd-ho-fg5" kind="custom" identifier="segue_join" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="H8e-bT-wod"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1f-x3-mIy">
@@ -416,7 +412,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="TaR-dp-OZz" kind="custom" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="dtp-94-wFz"/>
+                                    <action selector="btn_Profile:" destination="Asv-0w-oF7" eventType="touchUpInside" id="DbR-Wl-e5S"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -428,14 +424,17 @@
                         <outlet property="background" destination="UOv-na-C10" id="M5b-dp-SZ6"/>
                         <outlet property="btn_Host" destination="Y1f-x3-mIy" id="5he-2W-05j"/>
                         <outlet property="btn_Join" destination="qPb-Eb-hjd" id="dfK-VH-gOG"/>
+                        <outlet property="btn_back" destination="93b-lU-NeU" id="Ddk-yo-l5K"/>
+                        <outlet property="btn_profile" destination="KgG-gy-wBu" id="jXm-hG-vEa"/>
                         <outlet property="img_Logo" destination="2Ka-Vt-DOR" id="hTM-71-fyH"/>
                         <outlet property="lbl_Useranme" destination="x3f-du-E8C" id="vtM-Gt-mlR"/>
-                        <segue destination="tHT-pF-in6" kind="presentation" identifier="segue_createroom" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="SYg-jo-VN7"/>
+                        <segue destination="tHT-pF-in6" kind="presentation" identifier="segue_createroom" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="SYg-jo-VN7"/>
+                        <segue destination="TaR-dp-OZz" kind="custom" identifier="segue_profile" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="rl2-Zy-hLw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSz-lo-YSL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89.855072463768124" y="1593.7500000000002"/>
+            <point key="canvasLocation" x="90" y="1594"/>
         </scene>
         <!--Group List-->
         <scene sceneID="Lgi-XO-h2y">
@@ -604,12 +603,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="TVi-dr-VaX"/>
                     <connections>
+                        <outlet property="background" destination="eWh-Ub-nqe" id="deE-0L-1Ns"/>
                         <outlet property="bar_player1" destination="Rxc-oo-Jjg" id="BvN-I8-OeD"/>
                         <outlet property="bar_player2" destination="zRX-6v-AUJ" id="53j-Nv-ftW"/>
                         <outlet property="bar_player3" destination="Kvo-8W-Qnm" id="6Vp-TO-3zL"/>
                         <outlet property="bar_player4" destination="pVN-la-Lqp" id="xiD-9x-iMh"/>
                         <outlet property="bar_player5" destination="dhx-XN-dJF" id="Bau-ZX-fSW"/>
                         <outlet property="btn_EnterGame" destination="SMs-GE-grW" id="Ci0-ZG-Stb"/>
+                        <outlet property="btn_back" destination="Pwk-IJ-iCO" id="mtu-6z-RHn"/>
+                        <outlet property="btn_profile" destination="aXZ-nj-Pfl" id="zd2-DW-960"/>
+                        <outlet property="img_Logo" destination="MpD-Zd-YuS" id="9eH-j7-avg"/>
                         <outlet property="lbl_GameID" destination="5tw-PT-BA5" id="mOd-kx-Zuv"/>
                         <outlet property="lbl_player1" destination="RH6-uv-0Vm" id="cgR-tO-eGn"/>
                         <outlet property="lbl_player2" destination="JJU-UF-EO5" id="GcI-RS-1dh"/>
@@ -621,12 +624,227 @@
                         <outlet property="lbl_player_lvl_3" destination="Jjx-FF-C2G" id="caS-sZ-rai"/>
                         <outlet property="lbl_player_lvl_4" destination="idM-zB-jBm" id="dBf-UI-Mxs"/>
                         <outlet property="lbl_player_lvl_5" destination="aQP-SN-kE4" id="ooQ-JV-ih0"/>
-                        <segue destination="ovd-Pf-1qM" kind="presentation" identifier="segue_opengame" modalPresentationStyle="fullScreen" id="p3E-h4-0zq"/>
+                        <segue destination="ovd-Pf-1qM" kind="custom" identifier="segue_opengame" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="p3E-h4-0zq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SfV-rD-emG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1750.7246376811595" y="1593.7500000000002"/>
+        </scene>
+        <!--Score-->
+        <scene sceneID="U4g-Aa-HPZ">
+            <objects>
+                <viewController id="EQr-f9-EPS" customClass="VC_MP_Score" customModule="TapIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="heT-WO-lFa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Re7-aa-Rt6">
+                                <rect key="frame" x="0.0" y="24" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="12" minY="20" maxX="8" maxY="0.0"/>
+                                <state key="normal" image="back_icon.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_Back:" destination="EQr-f9-EPS" eventType="touchUpInside" id="F64-R0-AWU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="playername_1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRK-pt-eBp">
+                                <rect key="frame" x="70" y="269" width="150" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lvl_bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Fg-po-s8y">
+                                <rect key="frame" x="62" y="308" width="290" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ar7-ss-mN2">
+                                <rect key="frame" x="305" y="271" width="41" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RF4-OE-VTy">
+                                <rect key="frame" x="225" y="271" width="52" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2s-if-eCt">
+                                <rect key="frame" x="305" y="319" width="41" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqc-4b-CVp">
+                                <rect key="frame" x="225" y="319" width="52" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="playername_2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7F-6W-Zqi">
+                                <rect key="frame" x="70" y="317" width="150" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lvl_bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="EVN-IA-jsD">
+                                <rect key="frame" x="62" y="356" width="290" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="playername_3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOu-ck-C0H">
+                                <rect key="frame" x="70" y="365" width="150" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lvl_bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="abd-aG-X4m">
+                                <rect key="frame" x="62" y="404" width="290" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="playername_4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pw0-xf-PdT">
+                                <rect key="frame" x="70" y="413" width="150" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lvl_bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qtk-v5-2Hf">
+                                <rect key="frame" x="62" y="452" width="290" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="playername_5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jK-nT-lIQ">
+                                <rect key="frame" x="70" y="461" width="150" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lvl_bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="BMK-f6-W5V">
+                                <rect key="frame" x="62" y="500" width="290" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Taps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dZ-Mf-KxI">
+                                <rect key="frame" x="226" y="233" width="49" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lvl" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxD-Oz-qy7">
+                                <rect key="frame" x="298" y="233" width="52" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wx1-aF-dbs">
+                                <rect key="frame" x="305" y="367" width="41" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxc-cA-h1k">
+                                <rect key="frame" x="225" y="367" width="52" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGc-Xn-pBr">
+                                <rect key="frame" x="305" y="415" width="41" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYx-AI-7wn">
+                                <rect key="frame" x="225" y="415" width="52" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKZ-PF-PjF">
+                                <rect key="frame" x="305" y="463" width="41" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q86-vw-3Zt">
+                                <rect key="frame" x="225" y="463" width="52" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="JGc-sM-RGS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CnS-hU-OLY"/>
+                    <connections>
+                        <outlet property="bar_player1" destination="7Fg-po-s8y" id="THa-o1-Xee"/>
+                        <outlet property="bar_player2" destination="EVN-IA-jsD" id="e5h-PW-BT2"/>
+                        <outlet property="bar_player3" destination="abd-aG-X4m" id="wg2-ct-QNo"/>
+                        <outlet property="bar_player4" destination="Qtk-v5-2Hf" id="77r-eN-HPZ"/>
+                        <outlet property="bar_player5" destination="BMK-f6-W5V" id="69H-Cg-uHh"/>
+                        <outlet property="btn_back" destination="Re7-aa-Rt6" id="ZP0-9p-Ac4"/>
+                        <outlet property="lbl_lvl" destination="dxD-Oz-qy7" id="f3A-FQ-5HF"/>
+                        <outlet property="lbl_player1" destination="hRK-pt-eBp" id="u8h-Df-kEF"/>
+                        <outlet property="lbl_player2" destination="g7F-6W-Zqi" id="GbA-0c-PQQ"/>
+                        <outlet property="lbl_player3" destination="cOu-ck-C0H" id="lH4-Wg-oTm"/>
+                        <outlet property="lbl_player4" destination="pw0-xf-PdT" id="x0c-RC-r2Q"/>
+                        <outlet property="lbl_player5" destination="4jK-nT-lIQ" id="JnQ-YF-z50"/>
+                        <outlet property="lbl_player_lvl_1" destination="ar7-ss-mN2" id="z5E-jz-2B7"/>
+                        <outlet property="lbl_player_lvl_2" destination="f2s-if-eCt" id="Qt7-Tb-gRM"/>
+                        <outlet property="lbl_player_lvl_3" destination="wx1-aF-dbs" id="ED6-UF-G9b"/>
+                        <outlet property="lbl_player_lvl_4" destination="wGc-Xn-pBr" id="ufb-o5-S8n"/>
+                        <outlet property="lbl_player_lvl_5" destination="PKZ-PF-PjF" id="vEP-Av-XP2"/>
+                        <outlet property="lbl_player_taps_1" destination="RF4-OE-VTy" id="OPw-CZ-xz7"/>
+                        <outlet property="lbl_player_taps_2" destination="Pqc-4b-CVp" id="C5T-gp-fAF"/>
+                        <outlet property="lbl_player_taps_3" destination="mxc-cA-h1k" id="3fJ-wS-TMQ"/>
+                        <outlet property="lbl_player_taps_4" destination="GYx-AI-7wn" id="Hul-2Q-qFc"/>
+                        <outlet property="lbl_player_taps_5" destination="Q86-vw-3Zt" id="eRT-FC-Sar"/>
+                        <outlet property="lbl_taps" destination="8dZ-Mf-KxI" id="Nlr-Th-ggP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3hS-Up-OMB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3411.594202898551" y="1593.7500000000002"/>
         </scene>
         <!--Game-->
         <scene sceneID="rUa-LH-PQg">
@@ -777,22 +995,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.21176470589999999" green="0.84313725490000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsJ-pN-6xm">
-                                <rect key="frame" x="355" y="20" width="46" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="imageEdgeInsets" minX="10" minY="22" maxX="10" maxY="0.0"/>
-                                <state key="normal" image="btn_menu.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7e-g9-9ev">
-                                <rect key="frame" x="0.0" y="24" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="imageEdgeInsets" minX="12" minY="20" maxX="8" maxY="0.0"/>
-                                <state key="normal" image="back_icon.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <progressView hidden="YES" opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" progressImage="lvl_bar_full.png" trackImage="lvl_bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Vy-sz-glh">
                                 <rect key="frame" x="79" y="704" width="257" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -856,12 +1058,35 @@
                                     <action selector="btn_tryAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c1w-uL-orX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7e-g9-9ev">
+                                <rect key="frame" x="0.0" y="24" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="12" minY="20" maxX="8" maxY="0.0"/>
+                                <state key="normal" image="back_icon.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_Back:" destination="ovd-Pf-1qM" eventType="touchUpInside" id="0w9-gA-AgL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsJ-pN-6xm">
+                                <rect key="frame" x="355" y="20" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="22" maxX="10" maxY="0.0"/>
+                                <state key="normal" image="btn_menu.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_Score:" destination="ovd-Pf-1qM" eventType="touchUpInside" id="3db-jl-Jtg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21176470589999999" green="0.84313725490000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="zFJ-KK-fhR"/>
                     </view>
                     <navigationItem key="navigationItem" id="ihw-qi-CHA"/>
                     <connections>
+                        <outlet property="background" destination="jQv-Dc-ptG" id="quK-1a-CWU"/>
                         <outlet property="btn_Back" destination="c7e-g9-9ev" id="5oR-U8-gxC"/>
                         <outlet property="btn_Leader" destination="jsJ-pN-6xm" id="Tm5-M5-uC7"/>
                         <outlet property="btn_Screen" destination="Dug-1u-GyM" id="4Pg-sX-j77"/>
@@ -870,6 +1095,7 @@
                         <outlet property="lbl_Taps" destination="PUp-ji-Iug" id="e7x-o9-1ao"/>
                         <outlet property="lbl_levelStatus" destination="mt1-Zy-54N" id="fK0-Af-qqi"/>
                         <outlet property="lbl_timer" destination="EJ9-I3-5Lb" id="en6-De-IQK"/>
+                        <segue destination="EQr-f9-EPS" kind="presentation" identifier="segue_score" modalPresentationStyle="overFullScreen" id="Hae-J0-zgG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9k-mP-wgq" sceneMemberID="firstResponder"/>
@@ -1015,7 +1241,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btn_Back:" destination="dyd-ho-fg5" eventType="touchUpInside" id="1dU-Yx-JNd"/>
-                                    <segue destination="Asv-0w-oF7" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="quA-at-VZO"/>
+                                    <segue destination="Asv-0w-oF7" kind="custom" customClass="SegueFromLeft" customModule="TapIt" customModuleProvider="target" id="quA-at-VZO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l54-Bo-CKT">
@@ -1054,8 +1280,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="6HE-Gg-inM"/>
                     <connections>
+                        <outlet property="background" destination="hrX-Y1-Yy9" id="lR4-6L-0fx"/>
+                        <outlet property="btn_back" destination="td1-4T-aGg" id="TWg-cs-Ywj"/>
+                        <outlet property="btn_join" destination="l54-Bo-CKT" id="02G-Sc-bfw"/>
+                        <outlet property="btn_profile" destination="ncV-1m-shp" id="K9C-Vt-SKY"/>
+                        <outlet property="img_Logo" destination="m88-ot-DKB" id="j8V-mM-ntb"/>
                         <outlet property="txt_gamecode" destination="Lt1-xX-znP" id="Ikg-wi-rwc"/>
-                        <segue destination="tHT-pF-in6" kind="presentation" identifier="segue_openroom" modalPresentationStyle="fullScreen" id="FhR-1N-bQ6"/>
+                        <segue destination="tHT-pF-in6" kind="custom" identifier="segue_openroom" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="FhR-1N-bQ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmg-f5-7wZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1190,6 +1421,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="8jZ-nJ-eLH"/>
                     <connections>
+                        <outlet property="background" destination="Gm0-Of-JTd" id="5Wi-Br-P1f"/>
+                        <outlet property="bar_left" destination="erV-yk-kpD" id="b5B-IH-eD3"/>
+                        <outlet property="bar_right" destination="O7J-It-77J" id="TS6-Na-Kux"/>
+                        <outlet property="btn_back" destination="trc-6d-cF1" id="sCk-sh-9HQ"/>
+                        <outlet property="btn_guest" destination="MqU-Nw-pGi" id="fFZ-YO-lwa"/>
+                        <outlet property="btn_login" destination="bos-NO-JoI" id="cSS-ap-gPL"/>
+                        <outlet property="btn_signup" destination="nvn-Zg-LZf" id="4cT-eR-NMm"/>
+                        <outlet property="img_Logo" destination="7yY-K9-jJF" id="tYF-kN-n4i"/>
+                        <outlet property="lbl_forgot" destination="CvE-mf-RBb" id="5Yt-zK-Rob"/>
+                        <outlet property="lbl_or" destination="vbJ-29-5Ru" id="Nsw-ic-aid"/>
+                        <outlet property="lbl_signup" destination="kts-yV-F9m" id="ogU-qU-UY5"/>
                         <outlet property="txt_Password" destination="SYt-c9-RYI" id="L4w-3z-eP8"/>
                         <outlet property="txt_Username" destination="Igw-dW-nYA" id="Lla-EM-b7g"/>
                         <segue destination="AWC-BQ-G4K" kind="custom" identifier="segue_signup" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="HfC-aZ-tUr"/>
@@ -1317,7 +1559,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="7cR-dN-Wu4"/>
                     <connections>
+                        <outlet property="background" destination="KtQ-Iy-pak" id="Ku4-Qh-OwJ"/>
+                        <outlet property="btn_back" destination="BZr-vW-DHZ" id="43y-YY-IA4"/>
+                        <outlet property="btn_login" destination="3jw-QL-iiz" id="HTs-3q-Rpb"/>
+                        <outlet property="btn_signup" destination="4Ta-RG-JS6" id="6rT-Y4-ZXw"/>
+                        <outlet property="img_Logo" destination="eU2-u6-NIc" id="de2-DD-b6b"/>
                         <outlet property="lbl_Error" destination="VMJ-ag-SNa" id="Rxd-bC-3Dx"/>
+                        <outlet property="lbl_login" destination="eh5-wR-RFh" id="igW-v4-VIX"/>
                         <outlet property="txt_Email" destination="yaX-4h-MW3" id="k6u-CJ-JNb"/>
                         <outlet property="txt_Password" destination="DCe-fC-4b8" id="hvE-CU-cpJ"/>
                         <outlet property="txt_Username" destination="cXm-6b-yEf" id="gha-42-1lc"/>
@@ -1356,40 +1604,48 @@
                                     <action selector="btn_Back:" destination="TaR-dp-OZz" eventType="touchUpInside" id="TJ3-VM-dnf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sw7-Wf-aGe">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sw7-Wf-aGe">
                                 <rect key="frame" x="102" y="620" width="212" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="28"/>
-                                <state key="normal" image="btn_start.png">
+                                <state key="normal" image="btn_logout.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="btn_Logout:" destination="TaR-dp-OZz" eventType="touchUpInside" id="7Gh-yC-C5f"/>
-                                    <action selector="btn_tryAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uh5-FW-h3C"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BNL-Ax-V0V" customClass="CircularProgressView" customModule="TapIt" customModuleProvider="target">
+                                <rect key="frame" x="86" y="336" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5n-cJ-a7X">
+                                        <rect key="frame" x="14" y="58" width="215" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNC-tM-E4n">
+                                        <rect key="frame" x="98" y="161" width="52" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsN-VN-ERR">
+                                        <rect key="frame" x="-87" y="90" width="414" height="79"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="44"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                </subviews>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OW-a7-HLz">
-                                <rect key="frame" x="99" y="257" width="215" height="53"/>
+                                <rect key="frame" x="100" y="257" width="215" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="28"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BNL-Ax-V0V" customClass="CircularProgressView" customModule="TapIt" customModuleProvider="target">
-                                <rect key="frame" x="89" y="336" width="240" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNC-tM-E4n">
-                                <rect key="frame" x="186" y="481" width="52" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsN-VN-ERR">
-                                <rect key="frame" x="1" y="410" width="414" height="79"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="44"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
@@ -1399,10 +1655,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="Gdj-nY-PT9"/>
                     <connections>
+                        <outlet property="background" destination="Av0-vG-Vtb" id="j55-iO-3eO"/>
+                        <outlet property="btn_Back" destination="CWP-M6-iyU" id="ewn-xT-AlF"/>
                         <outlet property="btn_Logout" destination="Sw7-Wf-aGe" id="9k3-B2-DGw"/>
                         <outlet property="circularProgress" destination="BNL-Ax-V0V" id="ja1-mK-Ax7"/>
+                        <outlet property="img_Logo" destination="st2-gU-lls" id="oCM-pm-0M6"/>
                         <outlet property="lbl_Level" destination="PsN-VN-ERR" id="8aM-h8-v9i"/>
                         <outlet property="lbl_Level_Status" destination="TNC-tM-E4n" id="SAD-Bk-DAU"/>
+                        <outlet property="lbl_Level_Text" destination="T5n-cJ-a7X" id="jj0-rR-rtV"/>
                         <outlet property="lbl_Nickname" destination="4OW-a7-HLz" id="mrQ-6l-ZWe"/>
                     </connections>
                 </viewController>
@@ -1426,6 +1686,7 @@
         <image name="btn_host.png" width="484" height="110"/>
         <image name="btn_join.png" width="484" height="110"/>
         <image name="btn_login.png" width="484" height="110"/>
+        <image name="btn_logout.png" width="484" height="110"/>
         <image name="btn_menu.png" width="134" height="137"/>
         <image name="btn_more.png" width="134" height="137"/>
         <image name="btn_multiplayer.png" width="484" height="110"/>

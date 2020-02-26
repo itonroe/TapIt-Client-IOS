@@ -66,6 +66,7 @@
 		D84D088923D831F000135D5C /* btn_host.png in Resources */ = {isa = PBXBuildFile; fileRef = D84D088323D831F000135D5C /* btn_host.png */; };
 		D84D088A23D831F000135D5C /* btn_multiplayer.png in Resources */ = {isa = PBXBuildFile; fileRef = D84D088423D831F000135D5C /* btn_multiplayer.png */; };
 		D84D088B23D831F000135D5C /* btn_start.png in Resources */ = {isa = PBXBuildFile; fileRef = D84D088523D831F000135D5C /* btn_start.png */; };
+		D85869A023F1CE4500B8B988 /* btn_logout.png in Resources */ = {isa = PBXBuildFile; fileRef = D858699F23F1CE4500B8B988 /* btn_logout.png */; };
 		D85B493523CB290E00AD6569 /* logo_text.png in Resources */ = {isa = PBXBuildFile; fileRef = D85B493423CB290E00AD6569 /* logo_text.png */; };
 		D85B493923CB2A8F00AD6569 /* coin_game.png in Resources */ = {isa = PBXBuildFile; fileRef = D85B493823CB2A8E00AD6569 /* coin_game.png */; };
 		D85B494123CB893600AD6569 /* lvl_bar_full.png in Resources */ = {isa = PBXBuildFile; fileRef = D85B493A23CB893500AD6569 /* lvl_bar_full.png */; };
@@ -92,6 +93,7 @@
 		D8CDBEB923D5C817000BDF64 /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CDBEB823D5C817000BDF64 /* SegueFromLeft.swift */; };
 		D8CDBEBB23D5C8DD000BDF64 /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CDBEBA23D5C8DD000BDF64 /* SegueFromRight.swift */; };
 		D8CDBEBD23D62D0F000BDF64 /* btn_startover.png in Resources */ = {isa = PBXBuildFile; fileRef = D8CDBEBC23D62D0F000BDF64 /* btn_startover.png */; };
+		D8D1C97423FC42B800104118 /* VC_MP_Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D1C97323FC42B800104118 /* VC_MP_Score.swift */; };
 		D8D336AE23A9F58A002A3FE7 /* Seravek-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8D336A423A9F58A002A3FE7 /* Seravek-BoldItalic.ttf */; };
 		D8D336AF23A9F58A002A3FE7 /* Seravek-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8D336A523A9F58A002A3FE7 /* Seravek-ExtraLightItalic.ttf */; };
 		D8D336B023A9F58A002A3FE7 /* Seravek-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8D336A623A9F58A002A3FE7 /* Seravek-MediumItalic.ttf */; };
@@ -106,6 +108,7 @@
 		D8D3449B23DB219800FA5704 /* btn_signup.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D3449923DB219800FA5704 /* btn_signup.png */; };
 		D8D3449C23DB219800FA5704 /* btn_login.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D3449A23DB219800FA5704 /* btn_login.png */; };
 		D8D344A023DB234200FA5704 /* btn_guest.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D3449F23DB234200FA5704 /* btn_guest.png */; };
+		D8D8972B24070667004807F0 /* VC_LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8972A24070667004807F0 /* VC_LaunchScreen.swift */; };
 		D8F0E5F8239E77D800777602 /* VC_MP_GroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F0E5F7239E77D800777602 /* VC_MP_GroupList.swift */; };
 		D8F0E5FA239EF57F00777602 /* MultiplayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F0E5F9239EF57F00777602 /* MultiplayerGame.swift */; };
 		D8F0E5FC239EF75400777602 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F0E5FB239EF75400777602 /* DataManager.swift */; };
@@ -198,6 +201,7 @@
 		D84D088323D831F000135D5C /* btn_host.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_host.png; path = ../../../../../../../Photoshop/TapIt/btn_host.png; sourceTree = "<group>"; };
 		D84D088423D831F000135D5C /* btn_multiplayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_multiplayer.png; path = ../../../../../../../Photoshop/TapIt/btn_multiplayer.png; sourceTree = "<group>"; };
 		D84D088523D831F000135D5C /* btn_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_start.png; path = ../../../../../../../Photoshop/TapIt/btn_start.png; sourceTree = "<group>"; };
+		D858699F23F1CE4500B8B988 /* btn_logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_logout.png; path = ../../../../../../../Photoshop/TapIt/btn_logout.png; sourceTree = "<group>"; };
 		D85B493423CB290E00AD6569 /* logo_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_text.png; sourceTree = "<group>"; };
 		D85B493823CB2A8E00AD6569 /* coin_game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin_game.png; sourceTree = "<group>"; };
 		D85B493A23CB893500AD6569 /* lvl_bar_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lvl_bar_full.png; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 		D8CDBEB823D5C817000BDF64 /* SegueFromLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromLeft.swift; sourceTree = "<group>"; };
 		D8CDBEBA23D5C8DD000BDF64 /* SegueFromRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromRight.swift; sourceTree = "<group>"; };
 		D8CDBEBC23D62D0F000BDF64 /* btn_startover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_startover.png; path = ../../../../../../../Photoshop/TapIt/btn_startover.png; sourceTree = "<group>"; };
+		D8D1C97323FC42B800104118 /* VC_MP_Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_MP_Score.swift; sourceTree = "<group>"; };
 		D8D336A423A9F58A002A3FE7 /* Seravek-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Seravek-BoldItalic.ttf"; sourceTree = "<group>"; };
 		D8D336A523A9F58A002A3FE7 /* Seravek-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Seravek-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		D8D336A623A9F58A002A3FE7 /* Seravek-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Seravek-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -238,6 +243,7 @@
 		D8D3449923DB219800FA5704 /* btn_signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_signup.png; path = ../../../../../../../Photoshop/TapIt/btn_signup.png; sourceTree = "<group>"; };
 		D8D3449A23DB219800FA5704 /* btn_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_login.png; path = ../../../../../../../Photoshop/TapIt/btn_login.png; sourceTree = "<group>"; };
 		D8D3449F23DB234200FA5704 /* btn_guest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_guest.png; path = ../../../../../../../Photoshop/TapIt/btn_guest.png; sourceTree = "<group>"; };
+		D8D8972A24070667004807F0 /* VC_LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_LaunchScreen.swift; sourceTree = "<group>"; };
 		D8F0E5F6239E677400777602 /* PressIt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PressIt-Bridging-Header.h"; sourceTree = "<group>"; };
 		D8F0E5F7239E77D800777602 /* VC_MP_GroupList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_MP_GroupList.swift; sourceTree = "<group>"; };
 		D8F0E5F9239EF57F00777602 /* MultiplayerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerGame.swift; sourceTree = "<group>"; };
@@ -372,6 +378,7 @@
 		D802351D239542B800D0B152 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				D858699F23F1CE4500B8B988 /* btn_logout.png */,
 				D8D3449F23DB234200FA5704 /* btn_guest.png */,
 				D8D3449A23DB219800FA5704 /* btn_login.png */,
 				D8D3449923DB219800FA5704 /* btn_signup.png */,
@@ -441,6 +448,7 @@
 				D8B34C092396CB2A008B6DF3 /* VC_ArcadeGame.swift */,
 				D8D3449323DB198900FA5704 /* VC_Login.swift */,
 				D89A4D5823E4BB12005DB728 /* VC_Signup.swift */,
+				D8D8972A24070667004807F0 /* VC_LaunchScreen.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -523,6 +531,7 @@
 				D823FF4C23AE0F6E00CEEFE4 /* VC_MP_Game.swift */,
 				D88DA10C23B0C60700D6D9CF /* VC_MP_Menu.swift */,
 				D818252E23EE1C3E0015010C /* VC_MP_Profile.swift */,
+				D8D1C97323FC42B800104118 /* VC_MP_Score.swift */,
 			);
 			path = Multiplayer;
 			sourceTree = "<group>";
@@ -651,6 +660,7 @@
 				D841066023A96F5E000E3582 /* tap_it_bkg.png in Resources */,
 				D8D336AE23A9F58A002A3FE7 /* Seravek-BoldItalic.ttf in Resources */,
 				D818252D23EDD9140015010C /* sound_on.png in Resources */,
+				D85869A023F1CE4500B8B988 /* btn_logout.png in Resources */,
 				D80234C82393F07B00D0B152 /* Assets.xcassets in Resources */,
 				D85B494623CB893600AD6569 /* btn_more.png in Resources */,
 				D8D336B123A9F58A002A3FE7 /* Seravek-LightItalic.ttf in Resources */,
@@ -791,11 +801,13 @@
 				D88DA10D23B0C60700D6D9CF /* VC_MP_Menu.swift in Sources */,
 				D8B34BFC2396897E008B6DF3 /* VC_ClassicMenu.swift in Sources */,
 				D82F05A223D0F1620050B0D3 /* UI.swift in Sources */,
+				D8D1C97423FC42B800104118 /* VC_MP_Score.swift in Sources */,
 				D8B34C0A2396CB2A008B6DF3 /* VC_ArcadeGame.swift in Sources */,
 				D8CDBEB923D5C817000BDF64 /* SegueFromLeft.swift in Sources */,
 				D8B34C082396CAE5008B6DF3 /* ArcadeGame.swift in Sources */,
 				D80235002395308E00D0B152 /* VC_Main.swift in Sources */,
 				D8B34BFE23969288008B6DF3 /* VC_LBGame.swift in Sources */,
+				D8D8972B24070667004807F0 /* VC_LaunchScreen.swift in Sources */,
 				D80E99F323CD2DCC00AE2706 /* Player.swift in Sources */,
 				D8CDBEBB23D5C8DD000BDF64 /* SegueFromRight.swift in Sources */,
 				D823FF4D23AE0F6E00CEEFE4 /* VC_MP_Game.swift in Sources */,

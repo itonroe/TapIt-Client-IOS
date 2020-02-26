@@ -50,4 +50,20 @@ class Room{
         
         return -1;
     }
+    
+    func sortByTaps() -> Array<Player>{
+        var leaderBoard = players;
+        
+        for i in 0...leaderBoard.count - 1 {
+            for j in i...leaderBoard.count - 1 {
+                if (leaderBoard[i].get_Taps() < leaderBoard[j].get_Taps()){
+                    let temp = leaderBoard[i];
+                    leaderBoard[i] = leaderBoard[j];
+                    leaderBoard[j] = temp;
+                }
+            }
+        }
+        
+        return leaderBoard;
+    }
 }

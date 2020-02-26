@@ -19,6 +19,8 @@ class VC_MP_Menu: UIViewController{
     @IBOutlet weak var btn_Host: UIButton!
     @IBOutlet weak var btn_Join: UIButton!
     @IBOutlet weak var lbl_Useranme: UILabel!
+    @IBOutlet weak var btn_profile: UIButton!
+    @IBOutlet weak var btn_back: UIButton!
     
     var SC = ServerConversation()
     var gameID: String!
@@ -31,6 +33,9 @@ class VC_MP_Menu: UIViewController{
             background.frame.size.height += 8;
             background.frame.origin = CGPoint(x: 0, y: -2);
             btn_Join.frame.origin.y -= 12;
+            lbl_Useranme.frame.origin.x -= 4;
+            btn_back.frame.origin.y += 18;
+            btn_profile.frame.origin.y += 18;
         }
         else if (UIDevice.modelName == "iPhone 11 Pro"){
             background.image = UIImage(named: "bkg_iphone10.png")
@@ -39,17 +44,28 @@ class VC_MP_Menu: UIViewController{
             background.frame.size.height += 2;
             background.frame.origin = CGPoint(x: -1, y: 0);
             btn_Join.frame.origin.y -= 6;
+            btn_Join.frame.origin.x -= 4;
+            btn_Host.frame.origin.x -= 4;
+            lbl_Useranme.frame.origin.x -= 4;
+            btn_profile.frame.origin.x -= 34;
+            btn_back.frame.origin.y += 18;
+            btn_profile.frame.origin.y += 18;
+            
+            //btn_Host.frame.origin.x = btn_Host.frame.origin.x - 10;
+            //btn_Join.frame.origin.x = btn_Join.frame.origin.x - 10;
+            //lbl_Useranme.frame.origin.x = lbl_Useranme.frame.origin.x - 10;
         }
         else{
             background.frame.origin = CGPoint(x: 0, y: 0);
             background.frame.size.height += 4;
         }
         
-        
+        lbl_Useranme.frame.origin = ui.getNewLocation(old_location: lbl_Useranme.frame.origin)
         img_Logo.frame.origin = ui.getNewLocation(old_location: img_Logo.frame.origin)
         btn_Host.frame.origin = ui.getNewLocation(old_location: btn_Host.frame.origin)
         btn_Join.frame.origin = ui.getNewLocation(old_location: btn_Join.frame.origin)
         
+        lbl_Useranme.frame.size = ui.getNewSize(old_size: lbl_Useranme.frame.size)
         img_Logo.frame.size = ui.getNewSize(old_size: img_Logo.frame.size)
         background.frame.size = ui.getNewSize(old_size: background.frame.size)
         btn_Host.frame.size = ui.getNewSize(old_size: btn_Host.frame.size)
@@ -57,11 +73,19 @@ class VC_MP_Menu: UIViewController{
     }
     
     override func viewDidLoad() {
+        NotificationCenter.default.addObserver(self, selector: #selector(exitProfile(notification:)), name: Notification.Name("exitProfile"), object: nil)
+        
         ui = UI (size: self.view.frame.size);
         adjustUI()
         
         
         lbl_Useranme.text = MP_PLAYER_NICKNAME;
+        
+        if (UserDefaults.standard.value(forKey: "MP_GAME_ID") != nil){
+            performSegue(withIdentifier: "segue_join", sender: self)
+        }
+        
+        
     }
     
     @IBAction func btn_Host(_ sender: Any) {
@@ -70,6 +94,7 @@ class VC_MP_Menu: UIViewController{
         SC.socket.on("newgame") {data, ack in
             self.gameID = data[0] as? String
             self.playerID = data[1] as? String
+            UserDefaults.standard.setValue(self.playerID, forKey: "MP_PLAYER_ID")
             //print("New player joined to game with nickname: '" + (nickname ?? "ERROR LOADING THE PLAYER NICKNAME") + "'");
             self.performSegue(withIdentifier: "segue_createroom", sender: self)
             
@@ -89,16 +114,28 @@ class VC_MP_Menu: UIViewController{
                 //groupList.lvl_status = self.lvl_status;
                 
                 
-                groupList.room = Room(nickname: MP_PLAYER_NICKNAME, lvl: MP_PLAYER_LEVEL, roomID: gameID, playerID: playerID)
+                room = Room(nickname: MP_PLAYER_NICKNAME, lvl: MP_PLAYER_LEVEL, roomID: gameID, playerID: playerID)
                 SC.viewController = groupList;
-                //SC.getallplayers(gameID: gameID)
+                SC.getallplayers(gameID: gameID)
                 
                 
                 groupList.playerID = self.playerID;
+                UserDefaults.standard.setValue(playerID, forKey: "MP_PLAYER_ID")
                 groupList.SC = SC;
                 groupList.add_handlers();
             }
         }
+        else if segue.identifier == "segue_profile" {
+            if let profile = segue.destination as? VC_MP_Profile {
+                if(SIGNEDIN){
+                    profile.hideLogout = false;
+                }
+            }
+        }
+    }
+    
+    @IBAction func btn_Profile(_ sender: Any) {
+        performSegue(withIdentifier: "segue_profile", sender: self)
     }
     
     @IBAction func btn_Back(_ sender: Any) {
@@ -111,4 +148,11 @@ class VC_MP_Menu: UIViewController{
         self.dismiss(animated: false, completion: nil)
     }
     
+    @objc func exitProfile(notification: NSNotification){
+        print("User logged out.")
+        
+        
+        lbl_Useranme.text = MP_PLAYER_NICKNAME;
+        
+    }
 }

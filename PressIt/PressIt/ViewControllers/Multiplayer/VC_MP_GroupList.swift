@@ -11,10 +11,12 @@ import Foundation
 import UIKit
 import SocketIO
 
+var room: Room!
+
 class VC_MP_GroupList: UIViewController {
     
+    var ui: UI!;
     var SC: ServerConversation!
-    var room: Room!
     
     var isHost: Bool!
     
@@ -23,6 +25,13 @@ class VC_MP_GroupList: UIViewController {
     
     var gamecode: String!
     var playerID: String!
+    
+    @IBOutlet weak var img_Logo: UIImageView!
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var btn_profile: UIButton!
+    @IBOutlet weak var btn_back: UIButton!
+    
+    
     
     @IBOutlet weak var lbl_player1: UILabel!
     @IBOutlet weak var lbl_player2: UILabel!
@@ -40,14 +49,117 @@ class VC_MP_GroupList: UIViewController {
     @IBOutlet weak var bar_player4: UIImageView!
     @IBOutlet weak var bar_player5: UIImageView!
     
+    func adjustUI(){
+        if (UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
+            background.image = UIImage(named: "bkg_iphone10.png")
+            background.frame.size = self.view.frame.size;
+            background.frame.size.height += 8;
+            background.frame.origin = CGPoint(x: 0, y: -2);
+            
+            
+            
+            btn_EnterGame.frame.origin.y += 160;
+            lbl_GameID.frame.origin.y += 100;
+            lbl_player1.frame.origin.y += 100;
+            lbl_player2.frame.origin.y += 100;
+            lbl_player3.frame.origin.y += 100;
+            lbl_player4.frame.origin.y += 100;
+            lbl_player5.frame.origin.y += 100;
+            lbl_player_lvl_1.frame.origin.y += 100;
+            lbl_player_lvl_2.frame.origin.y += 100;
+            lbl_player_lvl_3.frame.origin.y += 100;
+            lbl_player_lvl_4.frame.origin.y += 100;
+            lbl_player_lvl_5.frame.origin.y += 100;
+            bar_player1.frame.origin.y += 100;
+            bar_player2.frame.origin.y += 100;
+            bar_player3.frame.origin.y += 100;
+            bar_player4.frame.origin.y += 100;
+            bar_player5.frame.origin.y += 100;
+            btn_back.frame.origin.y += 18;
+            btn_profile.frame.origin.y += 18;
+        }
+        else if (UIDevice.modelName == "iPhone 11 Pro"){
+            background.image = UIImage(named: "bkg_iphone10.png")
+            background.frame.size = self.view.frame.size;
+            background.frame.size.width += 2;
+            background.frame.size.height += 2;
+            background.frame.origin = CGPoint(x: -1, y: 0);
+            
+            
+            
+            btn_EnterGame.frame.origin.y += 100;
+            lbl_GameID.frame.origin.y += 40;
+            lbl_player1.frame.origin.y += 40;
+            lbl_player2.frame.origin.y += 40;
+            lbl_player3.frame.origin.y += 40;
+            lbl_player4.frame.origin.y += 40;
+            lbl_player5.frame.origin.y += 40;
+            lbl_player_lvl_1.frame.origin.y += 40;
+            lbl_player_lvl_2.frame.origin.y += 40;
+            lbl_player_lvl_3.frame.origin.y += 40;
+            lbl_player_lvl_4.frame.origin.y += 40;
+            lbl_player_lvl_5.frame.origin.y += 40;
+            bar_player1.frame.origin.y += 40;
+            bar_player2.frame.origin.y += 40;
+            bar_player3.frame.origin.y += 40;
+            bar_player4.frame.origin.y += 40;
+            bar_player5.frame.origin.y += 40;
+            
+            
+            
+            btn_EnterGame.frame.origin.x -= 20;
+            lbl_GameID.frame.origin.x -= 20;
+            lbl_player1.frame.origin.x -= 20;
+            lbl_player2.frame.origin.x -= 20;
+            lbl_player3.frame.origin.x -= 20;
+            lbl_player4.frame.origin.x -= 20;
+            lbl_player5.frame.origin.x -= 20;
+            lbl_player_lvl_1.frame.origin.x -= 20;
+            lbl_player_lvl_2.frame.origin.x -= 20;
+            lbl_player_lvl_3.frame.origin.x -= 20;
+            lbl_player_lvl_4.frame.origin.x -= 20;
+            lbl_player_lvl_5.frame.origin.x -= 20;
+            bar_player1.frame.origin.x -= 20;
+            bar_player2.frame.origin.x -= 20;
+            bar_player3.frame.origin.x -= 20;
+            bar_player4.frame.origin.x -= 20;
+            bar_player5.frame.origin.x -= 20;
+            btn_profile.frame.origin.x -= 34;
+            btn_back.frame.origin.y += 18;
+            btn_profile.frame.origin.y += 18;
+        }
+        else{
+            background.frame.origin = CGPoint(x: 0, y: 0);
+            background.frame.size.height += 4;
+        }
+        
+        
+        img_Logo.frame.origin = ui.getNewLocation(old_location: img_Logo.frame.origin)
+        
+        img_Logo.frame.size = ui.getNewSize(old_size: img_Logo.frame.size)
+    }
     
     override func viewDidLoad() {
+        
+        ui = UI (size: self.view.frame.size);
+        
+        adjustUI()
+        
+        
         if (gamecode != nil){
-                lbl_GameID.text = gamecode;
+            lbl_GameID.text = gamecode;
+            UserDefaults.standard.setValue(self.gamecode, forKey: "MP_GAME_ID")
         }
         
         lbl_player1.text = MP_PLAYER_NICKNAME;
-        lbl_player_lvl_1.text = MP_PLAYER_LEVEL;
+        lbl_player_lvl_1.text = "Lvl " + MP_PLAYER_LEVEL;
+        
+        if (room.get_NumberOfPlayers() < 2){
+            btn_EnterGame.isEnabled = false;
+        }
+        else{
+            btn_EnterGame.isEnabled = true;
+        }
     }
     
     func add_handlers(){
@@ -67,11 +179,11 @@ class VC_MP_GroupList: UIViewController {
     }
     
     @IBAction func btn_EnterGame(_ sender: Any) {
-        if (room.get_NumberOfPlayers() > 0){
+        if (room.get_NumberOfPlayers() >= 2){
             SC.openGame(gameID: lbl_GameID.text!);
             SC.socket.on("opengame") {data, ack in
 
-                print("Open game")
+                
                 self.performSegue(withIdentifier: "segue_opengame", sender: self)
             }
         }
@@ -86,6 +198,13 @@ class VC_MP_GroupList: UIViewController {
             }
             
             i += 1;
+        }
+        
+        if (room.get_NumberOfPlayers() < 2){
+            btn_EnterGame.isEnabled = false;
+        }
+        else{
+            btn_EnterGame.isEnabled = true;
         }
     }
     
@@ -148,8 +267,14 @@ class VC_MP_GroupList: UIViewController {
             // add the actions (buttons)
             alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.destructive) { (alertAction) in
                 self.SC.endGame(gameID: self.gamecode);
-
+                
+               UserDefaults.standard.removeObject(forKey: "MP_GAME_ID")
+               UserDefaults.standard.removeObject(forKey: "MP_PLAYER_ID")
+                
+                room = nil;
+                
                 self.dismissViewController()
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "exitGroupList"), object: nil)
             })
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { (alertAction) in })
             
@@ -166,8 +291,14 @@ class VC_MP_GroupList: UIViewController {
             // add the actions (buttons)
             alert.addAction(UIAlertAction(title: "Leave", style: UIAlertAction.Style.destructive) { (alertAction) in
                 self.SC.userExit(playerID: self.playerID, gameID: self.gamecode)
-
+            
+                UserDefaults.standard.removeObject(forKey: "MP_GAME_ID")
+                UserDefaults.standard.removeObject(forKey: "MP_PLAYER_ID")
+                
+                room = nil;
+                
                 self.dismissViewController()
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "exitGroupList"), object: nil)
             })
             
             alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.white
@@ -184,6 +315,7 @@ class VC_MP_GroupList: UIViewController {
             if let game = segue.destination as? VC_MP_Game {
                 game.SC = SC;
                 game.gamecode = lbl_GameID.text!;
+                game.playerID = self.playerID;
                 game.level_status = UserDefaults.standard.float(forKey: "PLAYER_LEVEL_STATUS")
             }
         }

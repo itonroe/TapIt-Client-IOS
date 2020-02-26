@@ -40,13 +40,19 @@ class VC_ClassicGame: UIViewController {
             background.frame.size.height += 8;
             background.frame.origin = CGPoint(x: 0, y: -2);
             
+            img_Circle.frame.size.width += 40;
+            img_Circle.frame.size.height += 40;
+            
             btn_tryAgain.frame.origin.y += 15;
             game_index.frame.origin.y = self.view.frame.height - 60;
-            img_Circle.frame.origin.y = self.view.frame.height / 2 - 140;
+            img_Circle.frame.origin.y = self.view.frame.height / 2 - 160;
+            img_Circle.frame.origin.x -= 20;
             lbl_Taps.frame.origin.y = self.view.frame.height / 2 - 18;
             lbl_timer.frame.origin.y += 18;
             lbl_record.frame.origin.y =  lbl_Taps.frame.origin.y + 40;
             btn_back.frame.origin.y += 18;
+
+            btn_tryAgain.frame.origin = ui.getNewLocation(old_location: btn_tryAgain.frame.origin)
         }
         else if (UIDevice.modelName == "iPhone 11 Pro"){
             //Undone yet
@@ -55,7 +61,30 @@ class VC_ClassicGame: UIViewController {
             background.frame.size.width += 2;
             background.frame.size.height += 2;
             background.frame.origin = CGPoint(x: -1, y: 0);
-            btn_tryAgain.frame.origin.y -= 6;
+            
+            game_index.frame.origin.y = self.view.frame.height - 60;
+            img_Circle.frame.origin.y = self.view.frame.height / 2 - 140;
+            lbl_Taps.frame.origin.y = self.view.frame.height / 2 - 18;
+            lbl_timer.frame.origin.y += 18;
+            lbl_record.frame.origin.y =  lbl_Taps.frame.origin.y + 40;
+            
+            game_index.frame.origin.x = self.game_index.frame.origin.x - 20;
+            img_Circle.frame.origin.x = self.img_Circle.frame.origin.x - 20;
+            lbl_Taps.frame.origin.x = self.lbl_Taps.frame.origin.x - 20;
+            lbl_record.frame.origin.x = self.lbl_record.frame.origin.x - 20;
+            lbl_timer.frame.origin.x = self.lbl_timer.frame.origin.x - 20;
+            
+
+            btn_tryAgain.frame.size = ui.getNewSize(old_size: btn_tryAgain.frame.size)
+            lbl_record.frame.size = ui.getNewSize(old_size: lbl_record.frame.size)
+            lbl_timer.frame.size = ui.getNewSize(old_size: lbl_timer.frame.size)
+            lbl_Taps.frame.size = ui.getNewSize(old_size: lbl_Taps.frame.size)
+            game_index.frame.size = ui.getNewSize(old_size: game_index.frame.size)
+            img_Circle.frame.size = ui.getNewSize(old_size: img_Circle.frame.size)
+
+            btn_tryAgain.frame.origin = ui.getNewLocation(old_location: btn_tryAgain.frame.origin)
+            btn_tryAgain.frame.origin.y += 10;
+            btn_back.frame.origin.y += 18;
         }
         else{
             background.frame.origin = CGPoint(x: 0, y: 0);
@@ -63,8 +92,7 @@ class VC_ClassicGame: UIViewController {
         }
         
         
-       // img_Logo.frame.origin = ui.getNewLocation(old_location: img_Logo.frame.origin)
-        btn_tryAgain.frame.origin = ui.getNewLocation(old_location: btn_tryAgain.frame.origin)
+        // img_Logo.frame.origin = ui.getNewLocation(old_location: img_Logo.frame.origin)
         //btn_Multiplayer.frame.origin = ui.getNewLocation(old_location: btn_Multiplayer.frame.origin)
         //lbl_Copyright.frame.origin = ui.getNewLocation(old_location: lbl_Copyright.frame.origin)
         

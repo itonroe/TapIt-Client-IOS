@@ -10,12 +10,19 @@ import Foundation
 import UIKit
 
 class VC_Signup: UIViewController {
+    var ui: UI!
     var SC: ServerConversation!;
     @IBOutlet weak var txt_Username: UITextField!
-       @IBOutlet weak var txt_Password: UITextField!
+    @IBOutlet weak var img_Logo: UIImageView!
+    @IBOutlet weak var txt_Password: UITextField!
        @IBOutlet weak var txt_Email: UITextField!
+    @IBOutlet weak var btn_signup: UIButton!
     
     @IBOutlet weak var lbl_Error: UILabel!
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var lbl_login: UILabel!
+    @IBOutlet weak var btn_login: UIButton!
+    @IBOutlet weak var btn_back: UIButton!
     
     let ERR_USERNAME_VALID = "Username must be alphanumeric and between 4 to 12 characters";
     let ERR_USERNAME_TAKEN = "Username is already taken";
@@ -23,7 +30,79 @@ class VC_Signup: UIViewController {
     let ERR_EMAIL_VALID = "Email is not valid";
     let ERR_EMAIL_TAKEN = "Email is already taken";
        
+    func adjustUI(){
+        if (UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
+            background.image = UIImage(named: "bkg_iphone10.png")
+            background.frame.size = self.view.frame.size;
+            background.frame.size.height += 8;
+            background.frame.origin = CGPoint(x: 0, y: -2);
+            
+            txt_Username.frame.origin.y += 120;
+            txt_Password.frame.origin.y += 120;
+            txt_Email.frame.origin.y += 120;
+            lbl_Error.frame.origin.y += 120;
+            btn_signup.frame.origin.y += 160;
+            btn_login.frame.origin.y += 160;
+            lbl_login.frame.origin.y += 160;
+            btn_back.frame.origin.y += 18;
+            
+        }
+        else if (UIDevice.modelName == "iPhone 11 Pro"){
+            background.image = UIImage(named: "bkg_iphone10.png")
+            background.frame.size = self.view.frame.size;
+            background.frame.size.width += 2;
+            background.frame.size.height += 2;
+            background.frame.origin = CGPoint(x: -1, y: 0);
+            
+            txt_Username.frame.origin.x -= 20;
+            txt_Password.frame.origin.x -= 20;
+            btn_login.frame.origin.x -= 20;
+            txt_Email.frame.origin.x -= 20;
+            btn_signup.frame.origin.x -= 20;
+            lbl_Error.frame.origin.x -= 20;
+            lbl_login.frame.origin.x -= 20;
+
+            
+            txt_Username.frame.origin.y += 40;
+            txt_Password.frame.origin.y += 40;
+            txt_Email.frame.origin.y += 40;
+            lbl_Error.frame.origin.y += 40;
+            btn_signup.frame.origin.y += 70;
+            btn_login.frame.origin.y += 70;
+            lbl_login.frame.origin.y += 70;
+            
+            
+            btn_back.frame.origin.y += 18;
+        }
+        else{
+            background.frame.origin = CGPoint(x: 0, y: 0);
+            background.frame.size.height += 4;
+        }
+        
+        
+        img_Logo.frame.origin = ui.getNewLocation(old_location: img_Logo.frame.origin)
+        
+        
+        //img_Logo.frame.origin = ui.getNewLocation(old_location: img_Logo.frame.origin)
+        //btn_Classic.frame.origin = ui.getNewLocation(old_location: btn_Classic.frame.origin)
+        //btn_Multiplayer.frame.origin = ui.getNewLocation(old_location: btn_Multiplayer.frame.origin)
+        //btn_Sound.frame.origin = ui.getNewLocation(old_location: btn_Sound.frame.origin)
+        //lbl_Copyright.frame.origin = ui.getNewLocation(old_location: lbl_Copyright.frame.origin)
+        
+        img_Logo.frame.size = ui.getNewSize(old_size: img_Logo.frame.size)
+        //background.frame.size = ui.getNewSize(old_size: background.frame.size)
+        //btn_Classic.frame.size = ui.getNewSize(old_size: btn_Classic.frame.size)
+        //btn_Multiplayer.frame.size = ui.getNewSize(old_size: btn_Multiplayer.frame.size)
+        //btn_Sound.frame.size = ui.getNewSize(old_size: btn_Sound.frame.size)
+        //lbl_Copyright.frame.size = ui.getNewSize(old_size: lbl_Copyright.frame.size)
+    }
+    
+    
+    
        override func viewDidLoad() {
+           ui = UI (size: self.view.frame.size);
+
+        adjustUI()
            self.hideKeyboardWhenTappedAround()
            txt_Username.useUnderline();
            txt_Email.useUnderline();

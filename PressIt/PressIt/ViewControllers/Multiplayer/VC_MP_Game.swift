@@ -13,14 +13,17 @@ import SAConfettiView
 
 class VC_MP_Game: UIViewController {
     
+    var ui: UI!;
     var SC: ServerConversation!
     var isHost: Bool!
     
     var gamecode: String!
+    var playerID: String!
     
     @IBOutlet weak var circularProgress: CircularProgressView!
     var level_status: Float!
     
+    @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var img_Circle: UIImageView!
     
     @IBOutlet weak var btn_Back: UIButton!
@@ -35,11 +38,81 @@ class VC_MP_Game: UIViewController {
     var game: MultiplayerGame!
     var gameseconds: Int!
     
+    func adjustUI(){
+        btn_Screen.frame.size = self.view.frame.size;
+        btn_Screen.frame.origin = CGPoint(x: 0, y: 0);
+        
+        if (UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
+            background.image = UIImage(named: "bkg_game_iphone10.png")
+            background.frame.size = self.view.frame.size;
+            background.frame.size.height += 8;
+            background.frame.origin = CGPoint(x: 0, y: -2);
+            
+            circularProgress.frame.size.width += 40;
+            circularProgress.frame.size.height += 40;
+            
+            btn_Start.frame.origin.y += 15;
+            circularProgress.frame.origin.y = self.view.frame.height / 2 - 140
+            circularProgress.frame.origin.x -= 0;
+            lbl_Taps.frame.origin.y = self.view.frame.height / 2 - 60;
+            lbl_timer.frame.origin.y += 18;
+            lbl_levelStatus.frame.origin.y =  lbl_Taps.frame.origin.y + 64;
+            btn_Back.frame.origin.y += 18;
+            btn_Leader.frame.origin.y += 18;
+
+            btn_Start.frame.origin = ui.getNewLocation(old_location: btn_Start.frame.origin)
+        }
+        else if (UIDevice.modelName == "iPhone 11 Pro"){
+            //Undone yet
+            background.image = UIImage(named: "bkg_game_iphone10.png")
+            background.frame.size = self.view.frame.size;
+            background.frame.size.width += 2;
+            background.frame.size.height += 2;
+            background.frame.origin = CGPoint(x: -1, y: 0);
+            
+            
+            btn_Start.frame.origin.y += 100;
+            circularProgress.frame.origin.y += 40;
+            lbl_Taps.frame.origin.y += 40;
+            lbl_timer.frame.origin.y += 40;
+            lbl_levelStatus.frame.origin.y += 40;
+            
+            btn_Start.frame.origin.x -= 20;
+            circularProgress.frame.origin.x -= 20;
+            lbl_Taps.frame.origin.x -= 20;
+            lbl_timer.frame.origin.x -= 20;
+            lbl_levelStatus.frame.origin.x -= 20;
+            btn_Leader.frame.origin.x -= 34;
+            btn_Back.frame.origin.y += 18;
+            btn_Leader.frame.origin.y += 18;
+        }
+        else{
+            background.frame.origin = CGPoint(x: 0, y: 0);
+            background.frame.size.height += 4;
+        }
+        
+        
+        // img_Logo.frame.origin = ui.getNewLocation(old_location: img_Logo.frame.origin)
+        //btn_Multiplayer.frame.origin = ui.getNewLocation(old_location: btn_Multiplayer.frame.origin)
+        //lbl_Copyright.frame.origin = ui.getNewLocation(old_location: lbl_Copyright.frame.origin)
+        
+        //img_Logo.frame.size = ui.getNewSize(old_size: img_Logo.frame.size)
+        //background.frame.size = ui.getNewSize(old_size: background.frame.size)
+        btn_Start.frame.size = ui.getNewSize(old_size: btn_Start.frame.size)
+        //btn_Multiplayer.frame.size = ui.getNewSize(old_size: btn_Multiplayer.frame.size)
+        //lbl_Copyright.frame.size = ui.getNewSize(old_size: lbl_Copyright.frame.size)
+    }
+    
     override func viewDidLoad() {
-        lbl_levelStatus.text = String(Int(getPrecentOfLevel() * 100)) + "%";
-        gameseconds = 5;
+        ui = UI (size: self.view.frame.size);
         circularProgress.progressClr = UIColor.white
         circularProgress.trackClr = UIColor.init(red: 184, green: 244, blue: 199, alpha: 1)
+        adjustUI()
+        
+        SC.addViewGame(view: self)
+        
+        lbl_levelStatus.text = String(Int(getPrecentOfLevel() * 100)) + "%";
+        gameseconds = 5;
         game = MultiplayerGame(controller: self, seconds: gameseconds);
         add_handlers();
     }
@@ -99,7 +172,7 @@ class VC_MP_Game: UIViewController {
     
     func add_LevelProgress() {
         level_status += 0.1;
-        
+        MP_PLAYER_LEVEL_STATUS = String(level_status)
         update_LevelProgress()
     }
     
@@ -154,11 +227,30 @@ class VC_MP_Game: UIViewController {
         //game.resetGame();
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //if segue.identifier == "segue_HSC" {
-         //   if let leaderBoardGame = segue.destination as? VC_LBGame {
-         //       leaderBoardGame.classicgame = gameseconds;
-        //    }
-        //}
+    @IBAction func btn_Score(_ sender: Any) {
+        SC.socket.emit("get_score", gamecode!);
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
+    
+    
+    @IBAction func btn_Back(_ sender: Any) {
+        // create the alert
+        let alert = UIAlertController(title: "Leave game?", message: "Are you sure you want to leave game?", preferredStyle: UIAlertController.Style.alert)
+
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Leave", style: UIAlertAction.Style.destructive) { (alertAction) in
+            //self.SC.userExit(playerID: self.playerID, gameID: self.gamecode)
+            self.dismissViewController()
+        })
+        
+        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.white
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { (alertAction) in })
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
 }

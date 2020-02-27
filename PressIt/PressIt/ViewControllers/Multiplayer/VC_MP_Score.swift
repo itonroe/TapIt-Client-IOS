@@ -149,7 +149,7 @@ class VC_MP_Score: UIViewController {
         hidePlayerList();
         var i = 0;
         for player in room.sortByTaps(){
-            setPlayer_Fields(index: i, nickname: player.get_Nickname(), lvl: player.get_Level(), taps: player.get_Taps())
+            setPlayer_Fields(index: room.get_NumberOfPlayers() - i - 1, nickname: player.get_Nickname(), lvl: player.get_Level(), taps: player.get_Taps())
             
             i += 1;
         }
@@ -196,7 +196,7 @@ class VC_MP_Score: UIViewController {
         case 3:
             lbl_player3.text = nickname;
             lbl_player_lvl_3.text = lvl;
-            lbl_player_taps_1.text = taps;
+            lbl_player_taps_3.text = taps;
             lbl_player3.isHidden = false;
             lbl_player_lvl_3.isHidden = false;
             lbl_player_taps_3.isHidden = false;

@@ -55,8 +55,8 @@ class Room{
         var leaderBoard = players;
         
         for i in 0...leaderBoard.count - 1 {
-            for j in i...leaderBoard.count - 1 {
-                if (leaderBoard[i].get_Taps() < leaderBoard[j].get_Taps()){
+            for j in 0...leaderBoard.count - 1 {
+                if (Int(leaderBoard[i].get_Taps())! < Int(leaderBoard[j].get_Taps())!){
                     let temp = leaderBoard[i];
                     leaderBoard[i] = leaderBoard[j];
                     leaderBoard[j] = temp;

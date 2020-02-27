@@ -93,7 +93,7 @@ class ServerConversation: NSObject {
         self.socket.on("playerexit") {data, ack in
             if (self.viewController != nil){
                 let playerID = data[0] as! String;
-                if (playerID != ""){
+                if (playerID != "" && room != nil){
                     room.remove_Player(playerID: playerID);
                     self.viewController.updatePlayersList();
                 }

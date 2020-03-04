@@ -27,7 +27,7 @@ class VC_MP_Menu: UIViewController{
     var playerID: String!
     
     func adjustUI(){
-        if (UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
+        if (UIDevice.modelName == "iPhone XR" || UIDevice.modelName == "iPhone XS Max" || UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
             background.image = UIImage(named: "bkg_iphone10.png")
             background.frame.size = self.view.frame.size;
             background.frame.size.height += 8;
@@ -37,16 +37,16 @@ class VC_MP_Menu: UIViewController{
             btn_back.frame.origin.y += 18;
             btn_profile.frame.origin.y += 18;
         }
-        else if (UIDevice.modelName == "iPhone 11 Pro"){
+        else if (UIDevice.modelName == "iPhone 11 Pro" || UIDevice.modelName == "iPhone X" || UIDevice.modelName == "iPhone XS"  ){
             background.image = UIImage(named: "bkg_iphone10.png")
             background.frame.size = self.view.frame.size;
             background.frame.size.width += 2;
             background.frame.size.height += 2;
             background.frame.origin = CGPoint(x: -1, y: 0);
             btn_Join.frame.origin.y -= 6;
-            btn_Join.frame.origin.x -= 4;
-            btn_Host.frame.origin.x -= 4;
-            lbl_Useranme.frame.origin.x -= 4;
+            btn_Join.frame.origin.x -= 6;
+            btn_Host.frame.origin.x -= 6;
+            lbl_Useranme.frame.origin.x -= 6;
             btn_profile.frame.origin.x -= 34;
             btn_back.frame.origin.y += 18;
             btn_profile.frame.origin.y += 18;
@@ -54,6 +54,14 @@ class VC_MP_Menu: UIViewController{
             //btn_Host.frame.origin.x = btn_Host.frame.origin.x - 10;
             //btn_Join.frame.origin.x = btn_Join.frame.origin.x - 10;
             //lbl_Useranme.frame.origin.x = lbl_Useranme.frame.origin.x - 10;
+        }else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s"){
+            background.frame.size = self.view.frame.size;
+            
+            btn_Join.frame.origin.y += 4;
+            btn_Join.frame.origin.x -= 12;
+            btn_Host.frame.origin.x -= 12;
+            lbl_Useranme.frame.origin.x -= 12;
+            btn_profile.frame.origin.x -= 34;
         }
         else{
             background.frame.origin = CGPoint(x: 0, y: 0);
@@ -65,11 +73,10 @@ class VC_MP_Menu: UIViewController{
         btn_Host.frame.origin = ui.getNewLocation(old_location: btn_Host.frame.origin)
         btn_Join.frame.origin = ui.getNewLocation(old_location: btn_Join.frame.origin)
         
-        lbl_Useranme.frame.size = ui.getNewSize(old_size: lbl_Useranme.frame.size)
+        //lbl_Useranme.frame.size = ui.getNewSize(old_size: lbl_Useranme.frame.size)
         img_Logo.frame.size = ui.getNewSize(old_size: img_Logo.frame.size)
-        background.frame.size = ui.getNewSize(old_size: background.frame.size)
-        btn_Host.frame.size = ui.getNewSize(old_size: btn_Host.frame.size)
-        btn_Join.frame.size = ui.getNewSize(old_size: btn_Join.frame.size)
+        //btn_Host.frame.size = ui.getNewSize(old_size: btn_Host.frame.size)
+        //btn_Join.frame.size = ui.getNewSize(old_size: btn_Join.frame.size)
     }
     
     override func viewDidLoad() {

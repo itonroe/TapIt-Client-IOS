@@ -35,14 +35,14 @@ class VC_Main: UIViewController {
     @IBOutlet weak var lbl_Copyright: UILabel!
     
     func adjustUI(){
-        if (UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
+        if (UIDevice.modelName == "iPhone XR" || UIDevice.modelName == "iPhone XS Max" || UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
             background.image = UIImage(named: "bkg_iphone10.png")
             background.frame.size = self.view.frame.size;
             background.frame.size.height += 8;
             background.frame.origin = CGPoint(x: 0, y: -2);
             btn_Multiplayer.frame.origin.y -= 12;
         }
-        else if (UIDevice.modelName == "iPhone 11 Pro"){
+        else if (UIDevice.modelName == "iPhone 11 Pro" || UIDevice.modelName == "iPhone X" || UIDevice.modelName == "iPhone XS"  ){
             background.image = UIImage(named: "bkg_iphone10.png")
             background.frame.size = self.view.frame.size;
             background.frame.size.width += 2;
@@ -51,10 +51,17 @@ class VC_Main: UIViewController {
             btn_Multiplayer.frame.origin.y -= 6;
             btn_Multiplayer.frame.origin.x -= 4;
             btn_Classic.frame.origin.x -= 4;
+        }else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s"){
+           background.frame.size = self.view.frame.size;
+            
+            btn_Multiplayer.frame.origin.y += 4;
+            btn_Multiplayer.frame.origin.x -= 12;
+            btn_Classic.frame.origin.x -= 12;
         }
         else{
             background.frame.origin = CGPoint(x: 0, y: 0);
             background.frame.size.height += 4;
+            
         }
         
         
@@ -65,9 +72,9 @@ class VC_Main: UIViewController {
         lbl_Copyright.frame.origin = ui.getNewLocation(old_location: lbl_Copyright.frame.origin)
         
         img_Logo.frame.size = ui.getNewSize(old_size: img_Logo.frame.size)
-        background.frame.size = ui.getNewSize(old_size: background.frame.size)
-        btn_Classic.frame.size = ui.getNewSize(old_size: btn_Classic.frame.size)
-        btn_Multiplayer.frame.size = ui.getNewSize(old_size: btn_Multiplayer.frame.size)
+        //background.frame.size = ui.getNewSize(old_size: background.frame.size)
+        //btn_Classic.frame.size = ui.getNewSize(old_size: btn_Classic.frame.size)
+        //btn_Multiplayer.frame.size = ui.getNewSize(old_size: btn_Multiplayer.frame.size)
         btn_Sound.frame.size = ui.getNewSize(old_size: btn_Sound.frame.size)
         lbl_Copyright.frame.size = ui.getNewSize(old_size: lbl_Copyright.frame.size)
     }

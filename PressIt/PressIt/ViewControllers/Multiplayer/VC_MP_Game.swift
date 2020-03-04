@@ -42,7 +42,7 @@ class VC_MP_Game: UIViewController {
         btn_Screen.frame.size = self.view.frame.size;
         btn_Screen.frame.origin = CGPoint(x: 0, y: 0);
         
-        if (UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
+        if (UIDevice.modelName == "iPhone XR" || UIDevice.modelName == "iPhone XS Max" || UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
             background.image = UIImage(named: "bkg_game_iphone10.png")
             background.frame.size = self.view.frame.size;
             background.frame.size.height += 8;
@@ -62,7 +62,7 @@ class VC_MP_Game: UIViewController {
 
             btn_Start.frame.origin = ui.getNewLocation(old_location: btn_Start.frame.origin)
         }
-        else if (UIDevice.modelName == "iPhone 11 Pro"){
+        else if (UIDevice.modelName == "iPhone 11 Pro" || UIDevice.modelName == "iPhone X" || UIDevice.modelName == "iPhone XS"  ){
             //Undone yet
             background.image = UIImage(named: "bkg_game_iphone10.png")
             background.frame.size = self.view.frame.size;
@@ -86,6 +86,25 @@ class VC_MP_Game: UIViewController {
             btn_Back.frame.origin.y += 18;
             btn_Leader.frame.origin.y += 18;
         }
+            else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s"){
+               background.frame.size = self.view.frame.size;
+            
+               btn_Start.frame.origin.y -= 30;
+        
+                circularProgress.frame.origin.y -= 30;
+                lbl_Taps.frame.origin.y -= 30;
+                lbl_timer.frame.origin.y -= 30;
+                lbl_levelStatus.frame.origin.y -= 30;
+                
+                btn_Start.frame.origin.x -= 20;
+                circularProgress.frame.origin.x -= 20;
+                lbl_Taps.frame.origin.x -= 20;
+                lbl_timer.frame.origin.x -= 20;
+                lbl_levelStatus.frame.origin.x -= 20;
+                btn_Leader.frame.origin.x -= 34;
+
+
+            }
         else{
             background.frame.origin = CGPoint(x: 0, y: 0);
             background.frame.size.height += 4;
@@ -98,7 +117,7 @@ class VC_MP_Game: UIViewController {
         
         //img_Logo.frame.size = ui.getNewSize(old_size: img_Logo.frame.size)
         //background.frame.size = ui.getNewSize(old_size: background.frame.size)
-        btn_Start.frame.size = ui.getNewSize(old_size: btn_Start.frame.size)
+        //btn_Start.frame.size = ui.getNewSize(old_size: btn_Start.frame.size)
         //btn_Multiplayer.frame.size = ui.getNewSize(old_size: btn_Multiplayer.frame.size)
         //lbl_Copyright.frame.size = ui.getNewSize(old_size: lbl_Copyright.frame.size)
     }

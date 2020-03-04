@@ -196,7 +196,7 @@ extension UIViewController {
     func startConfetti() -> SAConfettiView{
         let confettiView = SAConfettiView(frame: self.view.bounds)
         confettiView.intensity = 0.75
-        self.view.insertSubview(confettiView, at: self.view.subviews.count - 2);
+        self.view.insertSubview(confettiView, at: self.view.subviews.count - 4);
         confettiView.startConfetti()
         
         return confettiView;

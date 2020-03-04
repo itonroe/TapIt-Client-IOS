@@ -50,7 +50,7 @@ class VC_MP_GroupList: UIViewController {
     @IBOutlet weak var bar_player5: UIImageView!
     
     func adjustUI(){
-        if (UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
+        if (UIDevice.modelName == "iPhone XR" || UIDevice.modelName == "iPhone XS Max" || UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
             background.image = UIImage(named: "bkg_iphone10.png")
             background.frame.size = self.view.frame.size;
             background.frame.size.height += 8;
@@ -78,7 +78,7 @@ class VC_MP_GroupList: UIViewController {
             btn_back.frame.origin.y += 18;
             btn_profile.frame.origin.y += 18;
         }
-        else if (UIDevice.modelName == "iPhone 11 Pro"){
+        else if (UIDevice.modelName == "iPhone 11 Pro" || UIDevice.modelName == "iPhone X" || UIDevice.modelName == "iPhone XS"  ){
             background.image = UIImage(named: "bkg_iphone10.png")
             background.frame.size = self.view.frame.size;
             background.frame.size.width += 2;
@@ -127,6 +127,48 @@ class VC_MP_GroupList: UIViewController {
             btn_profile.frame.origin.x -= 34;
             btn_back.frame.origin.y += 18;
             btn_profile.frame.origin.y += 18;
+        }
+        else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s"){
+            
+            background.frame.size = self.view.frame.size;
+            btn_EnterGame.frame.origin.y -= 30;
+            lbl_GameID.frame.origin.y -= 30;
+            lbl_player1.frame.origin.y  -= 30;
+            lbl_player2.frame.origin.y  -= 30;
+            lbl_player3.frame.origin.y  -= 30;
+            lbl_player4.frame.origin.y  -= 30;
+            lbl_player5.frame.origin.y -= 30;
+            lbl_player_lvl_1.frame.origin.y -= 30;
+            lbl_player_lvl_2.frame.origin.y -= 30;
+            lbl_player_lvl_3.frame.origin.y -= 30;
+            lbl_player_lvl_4.frame.origin.y -= 30;
+            lbl_player_lvl_5.frame.origin.y -= 30;
+            bar_player1.frame.origin.y -= 30;
+            bar_player2.frame.origin.y -= 30;
+            bar_player3.frame.origin.y -= 30;
+            bar_player4.frame.origin.y -= 30;
+            bar_player5.frame.origin.y -= 30;
+            
+            
+            
+            btn_EnterGame.frame.origin.x -= 20;
+            lbl_GameID.frame.origin.x -= 20;
+            lbl_player1.frame.origin.x -= 20;
+            lbl_player2.frame.origin.x -= 20;
+            lbl_player3.frame.origin.x -= 20;
+            lbl_player4.frame.origin.x -= 20;
+            lbl_player5.frame.origin.x -= 20;
+            lbl_player_lvl_1.frame.origin.x -= 20;
+            lbl_player_lvl_2.frame.origin.x -= 20;
+            lbl_player_lvl_3.frame.origin.x -= 20;
+            lbl_player_lvl_4.frame.origin.x -= 20;
+            lbl_player_lvl_5.frame.origin.x -= 20;
+            bar_player1.frame.origin.x -= 20;
+            bar_player2.frame.origin.x -= 20;
+            bar_player3.frame.origin.x -= 20;
+            bar_player4.frame.origin.x -= 20;
+            bar_player5.frame.origin.x -= 20;
+            btn_profile.frame.origin.x -= 34;
         }
         else{
             background.frame.origin = CGPoint(x: 0, y: 0);

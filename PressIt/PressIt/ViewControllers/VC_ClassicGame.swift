@@ -34,7 +34,7 @@ class VC_ClassicGame: UIViewController {
         btn_Screen.frame.size = self.view.frame.size;
         btn_Screen.frame.origin = CGPoint(x: 0, y: 0);
         
-        if (UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
+        if (UIDevice.modelName == "iPhone XR" || UIDevice.modelName == "iPhone XS Max" || UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
             background.image = UIImage(named: "bkg_game_iphone10.png")
             background.frame.size = self.view.frame.size;
             background.frame.size.height += 8;
@@ -54,7 +54,7 @@ class VC_ClassicGame: UIViewController {
 
             btn_tryAgain.frame.origin = ui.getNewLocation(old_location: btn_tryAgain.frame.origin)
         }
-        else if (UIDevice.modelName == "iPhone 11 Pro"){
+        else if (UIDevice.modelName == "iPhone 11 Pro" || UIDevice.modelName == "iPhone X" || UIDevice.modelName == "iPhone XS"  ){
             //Undone yet
             background.image = UIImage(named: "bkg_game_iphone10.png")
             background.frame.size = self.view.frame.size;
@@ -75,16 +75,30 @@ class VC_ClassicGame: UIViewController {
             lbl_timer.frame.origin.x = self.lbl_timer.frame.origin.x - 20;
             
 
-            btn_tryAgain.frame.size = ui.getNewSize(old_size: btn_tryAgain.frame.size)
-            lbl_record.frame.size = ui.getNewSize(old_size: lbl_record.frame.size)
-            lbl_timer.frame.size = ui.getNewSize(old_size: lbl_timer.frame.size)
-            lbl_Taps.frame.size = ui.getNewSize(old_size: lbl_Taps.frame.size)
-            game_index.frame.size = ui.getNewSize(old_size: game_index.frame.size)
-            img_Circle.frame.size = ui.getNewSize(old_size: img_Circle.frame.size)
 
-            btn_tryAgain.frame.origin = ui.getNewLocation(old_location: btn_tryAgain.frame.origin)
-            btn_tryAgain.frame.origin.y += 10;
+            btn_tryAgain.frame.origin.y += 80;
+            btn_tryAgain.frame.origin.x -= 22;
             btn_back.frame.origin.y += 18;
+        }
+        else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s"){
+           background.frame.size = self.view.frame.size;
+            
+            game_index.frame.origin.y -= 60;
+            img_Circle.frame.origin.y -= 20;
+            lbl_Taps.frame.origin.y -= 20;
+            lbl_timer.frame.origin.y -= 20;
+            lbl_record.frame.origin.y -= 20;
+            
+            game_index.frame.origin.x = self.game_index.frame.origin.x - 20;
+            img_Circle.frame.origin.x = self.img_Circle.frame.origin.x - 20;
+            lbl_Taps.frame.origin.x = self.lbl_Taps.frame.origin.x - 20;
+            lbl_record.frame.origin.x = self.lbl_record.frame.origin.x - 20;
+            lbl_timer.frame.origin.x = self.lbl_timer.frame.origin.x - 20;
+            
+
+
+            btn_tryAgain.frame.origin.y -= 40;
+            btn_tryAgain.frame.origin.x -= 20;
         }
         else{
             background.frame.origin = CGPoint(x: 0, y: 0);
@@ -98,7 +112,7 @@ class VC_ClassicGame: UIViewController {
         
         //img_Logo.frame.size = ui.getNewSize(old_size: img_Logo.frame.size)
         //background.frame.size = ui.getNewSize(old_size: background.frame.size)
-        btn_tryAgain.frame.size = ui.getNewSize(old_size: btn_tryAgain.frame.size)
+        //btn_tryAgain.frame.size = ui.getNewSize(old_size: btn_tryAgain.frame.size)
         //btn_Multiplayer.frame.size = ui.getNewSize(old_size: btn_Multiplayer.frame.size)
         //lbl_Copyright.frame.size = ui.getNewSize(old_size: lbl_Copyright.frame.size)
     }

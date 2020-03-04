@@ -31,7 +31,7 @@ class VC_Signup: UIViewController {
     let ERR_EMAIL_TAKEN = "Email is already taken";
        
     func adjustUI(){
-        if (UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
+        if (UIDevice.modelName == "iPhone XR" || UIDevice.modelName == "iPhone XS Max" || UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
             background.image = UIImage(named: "bkg_iphone10.png")
             background.frame.size = self.view.frame.size;
             background.frame.size.height += 8;
@@ -47,7 +47,7 @@ class VC_Signup: UIViewController {
             btn_back.frame.origin.y += 18;
             
         }
-        else if (UIDevice.modelName == "iPhone 11 Pro"){
+        else if (UIDevice.modelName == "iPhone 11 Pro" || UIDevice.modelName == "iPhone X" || UIDevice.modelName == "iPhone XS"  ){
             background.image = UIImage(named: "bkg_iphone10.png")
             background.frame.size = self.view.frame.size;
             background.frame.size.width += 2;
@@ -73,6 +73,24 @@ class VC_Signup: UIViewController {
             
             
             btn_back.frame.origin.y += 18;
+        }
+        else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s"){
+           background.frame.size = self.view.frame.size;
+           txt_Username.frame.origin.x -= 20;
+           txt_Password.frame.origin.x -= 20;
+           btn_login.frame.origin.x -= 20;
+           txt_Email.frame.origin.x -= 20;
+           btn_signup.frame.origin.x -= 20;
+           lbl_Error.frame.origin.x -= 20;
+           lbl_login.frame.origin.x -= 20;
+
+            txt_Username.frame.origin.y -= 30;
+           txt_Password.frame.origin.y -= 30;
+           txt_Email.frame.origin.y -= 30;
+           lbl_Error.frame.origin.y -= 30;
+           btn_signup.frame.origin.y -= 60;
+           btn_login.frame.origin.y -= 60;
+           lbl_login.frame.origin.y -= 60;
         }
         else{
             background.frame.origin = CGPoint(x: 0, y: 0);

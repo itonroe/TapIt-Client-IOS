@@ -26,7 +26,7 @@ class VC_MP_Profile: UIViewController {
     var hideLogout = true;
     
     func adjustUI(){
-        if (UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
+        if (UIDevice.modelName == "iPhone XR" || UIDevice.modelName == "iPhone XS Max" || UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro Max"){
             background.image = UIImage(named: "bkg_iphone10.png")
             background.frame.size = self.view.frame.size;
             background.frame.size.height += 8;
@@ -38,7 +38,7 @@ class VC_MP_Profile: UIViewController {
             btn_Back.frame.origin.y += 18;
             
         }
-        else if (UIDevice.modelName == "iPhone 11 Pro"){
+        else if (UIDevice.modelName == "iPhone 11 Pro" || UIDevice.modelName == "iPhone X" || UIDevice.modelName == "iPhone XS"  ){
             background.image = UIImage(named: "bkg_iphone10.png")
             background.frame.size = self.view.frame.size;
             background.frame.size.width += 2;
@@ -60,6 +60,19 @@ class VC_MP_Profile: UIViewController {
             circularProgress.frame.origin.x -= 20;
             
             btn_Back.frame.origin.y += 18;
+        }else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s"){
+                background.frame.size = self.view.frame.size;
+
+                lbl_Nickname.frame.origin.y -= 30;
+            btn_Logout.frame.origin.y -= 30;
+                circularProgress.frame.origin.y -= 30;
+            
+                lbl_Nickname.frame.origin.x -= 22;
+                lbl_Level_Text.frame.origin.x -= 1;
+                //lbl_Level.frame.origin.x -= 20;
+                //lbl_Level_Status.frame.origin.x -= 20;
+                btn_Logout.frame.origin.x -= 20;
+                circularProgress.frame.origin.x -= 20;
         }
         else{
         }

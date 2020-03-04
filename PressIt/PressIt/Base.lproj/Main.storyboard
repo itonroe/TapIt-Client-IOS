@@ -87,7 +87,7 @@
                                 <rect key="frame" x="0.0" y="24" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="12" minY="20" maxX="8" maxY="0.0"/>
-                                <state key="normal" image="back_icon.png">
+                                <state key="normal" image="btn_back_ico_white.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -160,13 +160,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciW-yN-5Ft">
-                                <rect key="frame" x="91" y="299" width="232" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btn_arcade.png">
-                                    <color key="titleColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKL-gL-l40">
                                 <rect key="frame" x="102" y="461" width="212" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -643,7 +636,7 @@
                                 <rect key="frame" x="0.0" y="24" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="12" minY="20" maxX="8" maxY="0.0"/>
-                                <state key="normal" image="back_icon.png">
+                                <state key="normal" image="btn_back_ico_white.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -811,6 +804,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgK-QO-K8l">
+                                <rect key="frame" x="102" y="620" width="212" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="28"/>
+                                <state key="normal" image="btn_sharescoreboard.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_ShareScore:" destination="EQr-f9-EPS" eventType="touchUpInside" id="cBH-8j-hq4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="JGc-sM-RGS"/>
@@ -823,6 +827,7 @@
                         <outlet property="bar_player4" destination="Qtk-v5-2Hf" id="77r-eN-HPZ"/>
                         <outlet property="bar_player5" destination="BMK-f6-W5V" id="69H-Cg-uHh"/>
                         <outlet property="btn_back" destination="Re7-aa-Rt6" id="ZP0-9p-Ac4"/>
+                        <outlet property="btn_sharescoreboard" destination="JgK-QO-K8l" id="WRJ-Ga-OWP"/>
                         <outlet property="lbl_lvl" destination="dxD-Oz-qy7" id="f3A-FQ-5HF"/>
                         <outlet property="lbl_player1" destination="hRK-pt-eBp" id="u8h-Df-kEF"/>
                         <outlet property="lbl_player2" destination="g7F-6W-Zqi" id="GbA-0c-PQQ"/>
@@ -1678,9 +1683,9 @@
         <image name="back_icon.png" width="14" height="24"/>
         <image name="bkg.png" width="540" height="960"/>
         <image name="bkg_game.png" width="540" height="960"/>
-        <image name="btn_arcade.png" width="484" height="110"/>
         <image name="btn_back.png" width="484" height="110"/>
         <image name="btn_back_ico.png" width="134" height="137"/>
+        <image name="btn_back_ico_white.png" width="134" height="137"/>
         <image name="btn_classic.png" width="484" height="110"/>
         <image name="btn_guest.png" width="484" height="110"/>
         <image name="btn_host.png" width="484" height="110"/>
@@ -1692,6 +1697,7 @@
         <image name="btn_multiplayer.png" width="484" height="110"/>
         <image name="btn_open.png" width="484" height="110"/>
         <image name="btn_pause_green.png" width="36" height="36"/>
+        <image name="btn_sharescoreboard.png" width="484" height="110"/>
         <image name="btn_signup.png" width="484" height="110"/>
         <image name="btn_start.png" width="484" height="110"/>
         <image name="btn_startgame.png" width="486" height="106"/>
@@ -1705,9 +1711,9 @@
         <image name="tap_new_circle.png" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uzz-e2-BJE"/>
+        <segue reference="rl2-Zy-hLw"/>
         <segue reference="zlR-GX-Fna"/>
-        <segue reference="FhR-1N-bQ6"/>
+        <segue reference="SYg-jo-VN7"/>
         <segue reference="Z2i-uu-NGP"/>
     </inferredMetricsTieBreakers>
 </document>

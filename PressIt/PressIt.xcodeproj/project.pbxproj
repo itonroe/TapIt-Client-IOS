@@ -94,6 +94,9 @@
 		D8CDBEBB23D5C8DD000BDF64 /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CDBEBA23D5C8DD000BDF64 /* SegueFromRight.swift */; };
 		D8CDBEBD23D62D0F000BDF64 /* btn_startover.png in Resources */ = {isa = PBXBuildFile; fileRef = D8CDBEBC23D62D0F000BDF64 /* btn_startover.png */; };
 		D8D1C97423FC42B800104118 /* VC_MP_Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D1C97323FC42B800104118 /* VC_MP_Score.swift */; };
+		D8D32956240C332F0005FEF5 /* btn_back_ico_white.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D32954240C332F0005FEF5 /* btn_back_ico_white.png */; };
+		D8D32959240C346A0005FEF5 /* btn_share_ico.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D32958240C346A0005FEF5 /* btn_share_ico.png */; };
+		D8D32961240C3BF10005FEF5 /* btn_sharescoreboard.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D32960240C3BF10005FEF5 /* btn_sharescoreboard.png */; };
 		D8D336AE23A9F58A002A3FE7 /* Seravek-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8D336A423A9F58A002A3FE7 /* Seravek-BoldItalic.ttf */; };
 		D8D336AF23A9F58A002A3FE7 /* Seravek-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8D336A523A9F58A002A3FE7 /* Seravek-ExtraLightItalic.ttf */; };
 		D8D336B023A9F58A002A3FE7 /* Seravek-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8D336A623A9F58A002A3FE7 /* Seravek-MediumItalic.ttf */; };
@@ -229,6 +232,9 @@
 		D8CDBEBA23D5C8DD000BDF64 /* SegueFromRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromRight.swift; sourceTree = "<group>"; };
 		D8CDBEBC23D62D0F000BDF64 /* btn_startover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_startover.png; path = ../../../../../../../Photoshop/TapIt/btn_startover.png; sourceTree = "<group>"; };
 		D8D1C97323FC42B800104118 /* VC_MP_Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_MP_Score.swift; sourceTree = "<group>"; };
+		D8D32954240C332F0005FEF5 /* btn_back_ico_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_back_ico_white.png; sourceTree = "<group>"; };
+		D8D32958240C346A0005FEF5 /* btn_share_ico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_share_ico.png; sourceTree = "<group>"; };
+		D8D32960240C3BF10005FEF5 /* btn_sharescoreboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_sharescoreboard.png; path = ../../../../../../Photoshop/TapIt/btn_sharescoreboard.png; sourceTree = "<group>"; };
 		D8D336A423A9F58A002A3FE7 /* Seravek-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Seravek-BoldItalic.ttf"; sourceTree = "<group>"; };
 		D8D336A523A9F58A002A3FE7 /* Seravek-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Seravek-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		D8D336A623A9F58A002A3FE7 /* Seravek-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Seravek-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -400,6 +406,9 @@
 		D8023521239542C900D0B152 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				D8D32960240C3BF10005FEF5 /* btn_sharescoreboard.png */,
+				D8D32958240C346A0005FEF5 /* btn_share_ico.png */,
+				D8D32954240C332F0005FEF5 /* btn_back_ico_white.png */,
 				D818252A23EDD9140015010C /* sound_off.png */,
 				D818252B23EDD9140015010C /* sound_on.png */,
 				D89A4D5A23E4BCBE005DB728 /* email_ico.png */,
@@ -646,6 +655,7 @@
 				D89A4D4123E4B14A005DB728 /* bkg.png in Resources */,
 				D8D336B823A9F697002A3FE7 /* Seravek.ttf in Resources */,
 				D89A4D5B23E4BCBE005DB728 /* email_ico.png in Resources */,
+				D8D32959240C346A0005FEF5 /* btn_share_ico.png in Resources */,
 				D841068623A97ACD000E3582 /* Roboto-LightItalic.ttf in Resources */,
 				D85B494A23CB921500AD6569 /* avatar_jetpack.png in Resources */,
 				D80234F82395008300D0B152 /* Main.storyboard in Resources */,
@@ -698,6 +708,7 @@
 				D89A4D5723E4B9E3005DB728 /* user_ico.png in Resources */,
 				D841068F23A97ACD000E3582 /* Roboto-ThinItalic.ttf in Resources */,
 				D85B494123CB893600AD6569 /* lvl_bar_full.png in Resources */,
+				D8D32961240C3BF10005FEF5 /* btn_sharescoreboard.png in Resources */,
 				D841068723A97ACD000E3582 /* Roboto-MediumItalic.ttf in Resources */,
 				D841069123A97D50000E3582 /* menu_btn.png in Resources */,
 				D802352A239543D200D0B152 /* logo_58.png in Resources */,
@@ -705,6 +716,7 @@
 				D802352C239543D200D0B152 /* logo_87.png in Resources */,
 				D85B493523CB290E00AD6569 /* logo_text.png in Resources */,
 				D8023529239543D200D0B152 /* logo_40.png in Resources */,
+				D8D32956240C332F0005FEF5 /* btn_back_ico_white.png in Resources */,
 				D8D3449C23DB219800FA5704 /* btn_login.png in Resources */,
 				D8D336B423A9F58A002A3FE7 /* Seravek-Italic.ttf in Resources */,
 				D841066823A97198000E3582 /* back_icon.png in Resources */,
@@ -986,12 +998,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = P7R64KN43A;
 				INFOPLIST_FILE = PressIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iton.TapIt;
 				PRODUCT_NAME = TapIt;
 				SWIFT_OBJC_BRIDGING_HEADER = "PressIt/PressIt-Bridging-Header.h";
@@ -1007,12 +1021,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = P7R64KN43A;
 				INFOPLIST_FILE = PressIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iton.TapIt;
 				PRODUCT_NAME = TapIt;
 				SWIFT_OBJC_BRIDGING_HEADER = "PressIt/PressIt-Bridging-Header.h";

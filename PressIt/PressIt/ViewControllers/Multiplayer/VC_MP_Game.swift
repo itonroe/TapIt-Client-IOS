@@ -86,7 +86,7 @@ class VC_MP_Game: UIViewController {
             btn_Back.frame.origin.y += 18;
             btn_Leader.frame.origin.y += 18;
         }
-            else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s"){
+            else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s" || UIDevice.isModelaniPad()){
                background.frame.size = self.view.frame.size;
             
                btn_Start.frame.origin.y -= 30;

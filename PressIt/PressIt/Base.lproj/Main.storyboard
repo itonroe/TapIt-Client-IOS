@@ -27,7 +27,7 @@
         <!--Classic Game-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="VC_ClassicGame" customModule="TapIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="VC_ClassicGame" customModule="Tap_It" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,10 +194,9 @@
                         <outlet property="btn_Sound" destination="Egy-XX-1xA" id="nzz-m0-JC9"/>
                         <outlet property="img_Logo" destination="Hof-vS-7Mc" id="Cha-DB-HSv"/>
                         <outlet property="lbl_Copyright" destination="DpV-k7-c0s" id="lVo-rz-vZQ"/>
-                        <segue destination="e3c-ld-7zu" kind="presentation" identifier="segue_arcade" modalPresentationStyle="fullScreen" id="GZp-Wd-ZjX"/>
-                        <segue destination="BYZ-38-t0r" kind="custom" identifier="segue_classic" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="3Vg-SW-XWj"/>
-                        <segue destination="Qe7-EK-bCq" kind="custom" identifier="segue_login" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="yyk-JW-l8J"/>
-                        <segue destination="Asv-0w-oF7" kind="custom" identifier="segue_multiplayer" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="Z2i-uu-NGP"/>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="segue_classic" customClass="SegueFromRight" customModule="Tap_It" customModuleProvider="target" id="3Vg-SW-XWj"/>
+                        <segue destination="Qe7-EK-bCq" kind="custom" identifier="segue_login" customClass="SegueFromRight" customModule="Tap_It" customModuleProvider="target" id="yyk-JW-l8J"/>
+                        <segue destination="Asv-0w-oF7" kind="custom" identifier="segue_multiplayer" customClass="SegueFromRight" customModule="Tap_It" customModuleProvider="target" id="Z2i-uu-NGP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJs-Dn-tQG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -207,7 +206,7 @@
         <!--Arcade Game-->
         <scene sceneID="7rW-ba-A5n">
             <objects>
-                <viewController id="e3c-ld-7zu" customClass="VC_ArcadeGame" customModule="TapIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e3c-ld-7zu" customClass="VC_ArcadeGame" customModule="Tap_It" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="In4-Ph-xRg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -346,7 +345,7 @@
         <!--Menu-->
         <scene sceneID="l5C-2U-t7m">
             <objects>
-                <viewController id="Asv-0w-oF7" customClass="VC_MP_Menu" customModule="TapIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Asv-0w-oF7" customClass="VC_MP_Menu" customModule="Tap_It" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Kc-Lv-lWP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -377,7 +376,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dyd-ho-fg5" kind="custom" identifier="segue_join" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="H8e-bT-wod"/>
+                                    <segue destination="dyd-ho-fg5" kind="custom" identifier="segue_join" customClass="SegueFromRight" customModule="Tap_It" customModuleProvider="target" id="H8e-bT-wod"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1f-x3-mIy">
@@ -421,8 +420,8 @@
                         <outlet property="btn_profile" destination="KgG-gy-wBu" id="jXm-hG-vEa"/>
                         <outlet property="img_Logo" destination="2Ka-Vt-DOR" id="hTM-71-fyH"/>
                         <outlet property="lbl_Useranme" destination="x3f-du-E8C" id="vtM-Gt-mlR"/>
-                        <segue destination="tHT-pF-in6" kind="presentation" identifier="segue_createroom" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="SYg-jo-VN7"/>
-                        <segue destination="TaR-dp-OZz" kind="custom" identifier="segue_profile" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="rl2-Zy-hLw"/>
+                        <segue destination="tHT-pF-in6" kind="presentation" identifier="segue_createroom" customClass="SegueFromRight" customModule="Tap_It" customModuleProvider="target" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="SYg-jo-VN7"/>
+                        <segue destination="TaR-dp-OZz" kind="custom" identifier="segue_profile" customClass="SegueFromRight" customModule="Tap_It" customModuleProvider="target" id="rl2-Zy-hLw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSz-lo-YSL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -432,7 +431,7 @@
         <!--Group List-->
         <scene sceneID="Lgi-XO-h2y">
             <objects>
-                <viewController id="tHT-pF-in6" customClass="VC_MP_GroupList" customModule="TapIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tHT-pF-in6" customClass="VC_MP_GroupList" customModule="Tap_It" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1jj-Mv-W3M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -449,7 +448,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="TaR-dp-OZz" kind="custom" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="uzz-e2-BJE"/>
+                                    <segue destination="TaR-dp-OZz" kind="custom" customClass="SegueFromRight" customModule="Tap_It" customModuleProvider="target" id="uzz-e2-BJE"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="MpD-Zd-YuS">
@@ -617,7 +616,7 @@
                         <outlet property="lbl_player_lvl_3" destination="Jjx-FF-C2G" id="caS-sZ-rai"/>
                         <outlet property="lbl_player_lvl_4" destination="idM-zB-jBm" id="dBf-UI-Mxs"/>
                         <outlet property="lbl_player_lvl_5" destination="aQP-SN-kE4" id="ooQ-JV-ih0"/>
-                        <segue destination="ovd-Pf-1qM" kind="custom" identifier="segue_opengame" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="p3E-h4-0zq"/>
+                        <segue destination="ovd-Pf-1qM" kind="custom" identifier="segue_opengame" customClass="SegueFromRight" customModule="Tap_It" customModuleProvider="target" id="p3E-h4-0zq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SfV-rD-emG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -627,7 +626,7 @@
         <!--Score-->
         <scene sceneID="U4g-Aa-HPZ">
             <objects>
-                <viewController id="EQr-f9-EPS" customClass="VC_MP_Score" customModule="TapIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EQr-f9-EPS" customClass="VC_MP_Score" customModule="Tap_It" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="heT-WO-lFa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -854,7 +853,7 @@
         <!--Game-->
         <scene sceneID="rUa-LH-PQg">
             <objects>
-                <viewController id="1pE-eS-93T" customClass="VC_LBGame" customModule="TapIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1pE-eS-93T" customClass="VC_LBGame" customModule="Tap_It" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t7l-c0-yzz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -904,7 +903,7 @@
         <!--Classic Menu-->
         <scene sceneID="jcr-ca-l7P">
             <objects>
-                <viewController id="Jrk-Pu-5np" customClass="VC_ClassicMenu" customModule="TapIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Jrk-Pu-5np" customClass="VC_ClassicMenu" customModule="Tap_It" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s3S-PA-fpb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -990,7 +989,7 @@
         <!--Game-->
         <scene sceneID="PBo-Ke-4h2">
             <objects>
-                <viewController id="ovd-Pf-1qM" customClass="VC_MP_Game" customModule="TapIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ovd-Pf-1qM" customClass="VC_MP_Game" customModule="Tap_It" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PAF-9h-xFx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1025,7 +1024,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0uw-g5-Kh2" customClass="CircularProgressView" customModule="TapIt" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0uw-g5-Kh2" customClass="CircularProgressView" customModule="Tap_It" customModuleProvider="target">
                                 <rect key="frame" x="88" y="248" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
@@ -1110,7 +1109,7 @@
         <!--Game-->
         <scene sceneID="vJw-bi-syJ">
             <objects>
-                <viewController id="flI-uZ-ENa" customClass="VC_MP_Game" customModule="TapIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="flI-uZ-ENa" customClass="VC_MP_Game" customModule="Tap_It" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eBd-ij-rJw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1213,7 +1212,7 @@
         <!--Join Group-->
         <scene sceneID="gTh-qf-Jad">
             <objects>
-                <viewController id="dyd-ho-fg5" customClass="VC_MP_JoinGroup" customModule="TapIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dyd-ho-fg5" customClass="VC_MP_JoinGroup" customModule="Tap_It" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cqy-MK-rbA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1230,7 +1229,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="TaR-dp-OZz" kind="custom" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="PZz-sq-sy7"/>
+                                    <segue destination="TaR-dp-OZz" kind="custom" customClass="SegueFromRight" customModule="Tap_It" customModuleProvider="target" id="PZz-sq-sy7"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="m88-ot-DKB">
@@ -1246,7 +1245,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btn_Back:" destination="dyd-ho-fg5" eventType="touchUpInside" id="1dU-Yx-JNd"/>
-                                    <segue destination="Asv-0w-oF7" kind="custom" customClass="SegueFromLeft" customModule="TapIt" customModuleProvider="target" id="quA-at-VZO"/>
+                                    <segue destination="Asv-0w-oF7" kind="custom" customClass="SegueFromLeft" customModule="Tap_It" customModuleProvider="target" id="quA-at-VZO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l54-Bo-CKT">
@@ -1291,7 +1290,7 @@
                         <outlet property="btn_profile" destination="ncV-1m-shp" id="K9C-Vt-SKY"/>
                         <outlet property="img_Logo" destination="m88-ot-DKB" id="j8V-mM-ntb"/>
                         <outlet property="txt_gamecode" destination="Lt1-xX-znP" id="Ikg-wi-rwc"/>
-                        <segue destination="tHT-pF-in6" kind="custom" identifier="segue_openroom" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="FhR-1N-bQ6"/>
+                        <segue destination="tHT-pF-in6" kind="custom" identifier="segue_openroom" customClass="SegueFromRight" customModule="Tap_It" customModuleProvider="target" id="FhR-1N-bQ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmg-f5-7wZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1301,7 +1300,7 @@
         <!--Login-->
         <scene sceneID="0E8-fG-GgE">
             <objects>
-                <viewController id="Qe7-EK-bCq" customClass="VC_Login" customModule="TapIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Qe7-EK-bCq" customClass="VC_Login" customModule="Tap_It" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p2j-oh-uUS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1407,7 +1406,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Asv-0w-oF7" kind="custom" identifier="segue_mp_menu" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="Hfw-Zo-1Gs"/>
+                                    <segue destination="Asv-0w-oF7" kind="custom" identifier="segue_mp_menu" customClass="SegueFromRight" customModule="Tap_It" customModuleProvider="target" id="Hfw-Zo-1Gs"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lvl_bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="erV-yk-kpD">
@@ -1439,7 +1438,7 @@
                         <outlet property="lbl_signup" destination="kts-yV-F9m" id="ogU-qU-UY5"/>
                         <outlet property="txt_Password" destination="SYt-c9-RYI" id="L4w-3z-eP8"/>
                         <outlet property="txt_Username" destination="Igw-dW-nYA" id="Lla-EM-b7g"/>
-                        <segue destination="AWC-BQ-G4K" kind="custom" identifier="segue_signup" customClass="SegueFromRight" customModule="TapIt" customModuleProvider="target" id="HfC-aZ-tUr"/>
+                        <segue destination="AWC-BQ-G4K" kind="custom" identifier="segue_signup" customClass="SegueFromRight" customModule="Tap_It" customModuleProvider="target" id="HfC-aZ-tUr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COg-DM-iFo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1450,7 +1449,7 @@
         <!--Signup-->
         <scene sceneID="TG5-Cx-njh">
             <objects>
-                <viewController id="AWC-BQ-G4K" customClass="VC_Signup" customModule="TapIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AWC-BQ-G4K" customClass="VC_Signup" customModule="Tap_It" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eNX-G6-Uzi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1584,7 +1583,7 @@
         <!--Profile-->
         <scene sceneID="0ix-PS-5iN">
             <objects>
-                <viewController id="TaR-dp-OZz" customClass="VC_MP_Profile" customModule="TapIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TaR-dp-OZz" customClass="VC_MP_Profile" customModule="Tap_It" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2m5-Ap-oRs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1620,7 +1619,7 @@
                                     <action selector="btn_Logout:" destination="TaR-dp-OZz" eventType="touchUpInside" id="7Gh-yC-C5f"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BNL-Ax-V0V" customClass="CircularProgressView" customModule="TapIt" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BNL-Ax-V0V" customClass="CircularProgressView" customModule="Tap_It" customModuleProvider="target">
                                 <rect key="frame" x="86" y="336" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -1711,9 +1710,9 @@
         <image name="tap_new_circle.png" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rl2-Zy-hLw"/>
-        <segue reference="zlR-GX-Fna"/>
-        <segue reference="SYg-jo-VN7"/>
+        <segue reference="PZz-sq-sy7"/>
+        <segue reference="lAF-tf-Njg"/>
+        <segue reference="FhR-1N-bQ6"/>
         <segue reference="Z2i-uu-NGP"/>
     </inferredMetricsTieBreakers>
 </document>

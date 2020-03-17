@@ -54,7 +54,7 @@ class VC_MP_Menu: UIViewController{
             //btn_Host.frame.origin.x = btn_Host.frame.origin.x - 10;
             //btn_Join.frame.origin.x = btn_Join.frame.origin.x - 10;
             //lbl_Useranme.frame.origin.x = lbl_Useranme.frame.origin.x - 10;
-        }else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s"){
+        }else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s" || UIDevice.isModelaniPad()){
             background.frame.size = self.view.frame.size;
             
             btn_Join.frame.origin.y += 4;

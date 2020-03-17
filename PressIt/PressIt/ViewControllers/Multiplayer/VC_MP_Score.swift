@@ -133,7 +133,7 @@ class VC_MP_Score: UIViewController {
                    lbl_taps.frame.origin.x -= 20;
                   btn_back.frame.origin.y += 18;
            }
-             else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s"){
+             else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s" || UIDevice.isModelaniPad()){
             
                   btn_sharescoreboard.frame.origin.y -= 40;
                   btn_sharescoreboard.frame.origin.x -= 20;

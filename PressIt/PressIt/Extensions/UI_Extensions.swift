@@ -69,6 +69,11 @@ extension UILabel {
 }
 
 public extension UIDevice {
+    
+    static func isModelaniPad() -> Bool {
+        if (modelName.contains("iPad")){ return true;}
+        return false;
+    }
 
     static let modelName: String = {
         var systemInfo = utsname()
@@ -144,7 +149,6 @@ public extension UIDevice {
 
         return mapToDevice(identifier: identifier)
     }()
-
 }
 extension UITextField {
     func setLeftPaddingPoints(_ amount:CGFloat){

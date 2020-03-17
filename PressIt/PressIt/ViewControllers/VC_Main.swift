@@ -51,7 +51,7 @@ class VC_Main: UIViewController {
             btn_Multiplayer.frame.origin.y -= 6;
             btn_Multiplayer.frame.origin.x -= 4;
             btn_Classic.frame.origin.x -= 4;
-        }else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s"){
+        }else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s" || UIDevice.isModelaniPad()){
            background.frame.size = self.view.frame.size;
             
             btn_Multiplayer.frame.origin.y += 4;

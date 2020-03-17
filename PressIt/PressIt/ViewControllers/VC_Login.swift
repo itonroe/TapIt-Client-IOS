@@ -83,7 +83,7 @@ class VC_Login: UIViewController {
             btn_back.frame.origin.y += 18;
             
         }
-        else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s"){
+        else if (UIDevice.modelName == "iPhone 8" || UIDevice.modelName == "iPhone 7" || UIDevice.modelName == "iPhone 6" || UIDevice.modelName == "iPhone 6s" || UIDevice.isModelaniPad()){
             background.frame.size = self.view.frame.size;
             txt_Username.frame.origin.x -= 20;
             txt_Password.frame.origin.x -= 20;
